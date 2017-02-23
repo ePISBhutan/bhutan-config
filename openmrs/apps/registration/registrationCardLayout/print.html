@@ -2,40 +2,8 @@
 <table border="1" cellpadding="0" cellspacing="1" class="registrationCard-print-table">
     <tbody>
     <tr>
-        <td  class="print-table-left">
-            <table>
-                <tr>
-
-                    <td>
-                        <h3 class="print-table-header">Notice</h3>
-                        <ul class="print-table-left-body">
-                            <li>
-                                {{ "REGISTRATION_BRING_CARD_TEXT_KEY" | translate }}
-                            </li>
-                            <li>
-                                {{ "REGISTRATION_TAKE_MEDICINES_TEXT_KEY" | translate}}
-                            </li>
-                            <li>
-                                {{ "REGISTRATION_TIMINGS_TEXT_KEY" | translate }}
-                            </li>
-                            <li>
-                               {{ "REGISTRATION_OPD_DAYS_TEXT_KEY" | translate }}
-                            </li>
-                            <li>
-                                {{ "REGISTRATION_SUNDAYS_HOLIDAY_TEXT_KEY" | translate }}
-                            </li>
-                        </ul>
-                        <div class="caution">
-                            <h3 class="print-table-header">Caution</h3>
-                            <p>
-                                {{ "REGISTRATION_SMOKING_INJURIOUS_TEXT_KEY" | translate }}
-                            </p>
-                        </div>
-                    </td>
-                </tr>
-            </table>
-        </td>
-        <td class="print-table-right" valign="top">
+        
+        <td class="print-table-left" valign="top">
             <table>
                 <tr>
                     <td class="logo">
@@ -62,6 +30,17 @@
             </table>
             <table class="registrationCard-details">
                 <tbody>
+                    <tr>
+                <img id="barcode"
+                     jsbarcode-value="{{patient.primaryIdentifier.identifier}}"
+                     jsbarcode-width="3"
+                     jsbarcode-height="70"
+                     jsbarcode-margin="30"
+                     jsbarcode-displayValue="false"
+                     jsbarcode-textAlign="left"
+                     jsbarcode-textMargin="0"
+                     jsbarcode-fontSize="10"/>
+                </tr>
                 <tr>
                     <td class="registrationCard-details-name">
                         <span class="hindi-text">Dated</span>
@@ -78,11 +57,18 @@
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
+                        <span class="hindi-text">CID</span>
+                    </td>
+                    <td class="registrationCard-details-seperator"> :  </td>
+                    <td>{{patient.CID}} </td>
+                </tr>
+                <tr>
+                    <td class="registrationCard-details-name">
                         <span class="hindi-text">Name</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>
-                        <span class="hindi-text">{{patient.fullNameLocal()}}</span>
+                        <span class="hindi-text">{{patient.givenName}} {{patient.middleName}} {{patient.familyName}}</span>
                     </td>
                 </tr>
                 <tr>
@@ -101,10 +87,10 @@
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">Address</span>
+                        <span class="hindi-text">Father's/Husband's Name</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
-                    <td>{{patient.primaryRelative}} </td>
+                    <td>{{patient.FatherHusbandName}} </td>
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
@@ -115,7 +101,7 @@
                 </tr>
                 <tr>
                     <td class="registrationCard-details-name">
-                        <span class="hindi-text">Tehsil</span>
+                        <span class="hindi-text">District</span>
                     </td>
                     <td class="registrationCard-details-seperator"> :  </td>
                     <td>{{patient.address.address3}} </td>
@@ -126,3 +112,10 @@
     </tr>
     </tbody>
 </table>
+
+<script type="text/javascript" src="/bahmni_config/openmrs/apps/JsBarcode.all.min.js"></script>
+<script>
+    (function() {
+        JsBarcode("#barcode").init();
+    })();
+</script>

@@ -89,6 +89,15 @@ h1, h2, h3 {
   height: 12mm;
 }
 
+/* line 58, print.scss */
+.print-table-left .logo {
+  text-align: center;
+  width: 12mm;
+  padding: 10px;
+  margin: 10px;
+  height: 12mm;
+}
+
 /* line 65, print.scss */
 .print-table-right-header {
   text-align: center;
