@@ -25,6 +25,15 @@
     "config": {
         "enableRadiologyOrderOptions":["Urgent","NeedsPrint"],
         "quickPrints":false,
+
+        "printConfig": {
+          "visitSummaryPrint": {
+            "showChart": false
+          },
+          "opdSummaryPrint": {
+            "showChart": false
+          }
+        },
         "networkConnectivity" : {
             "showNetworkStatusMessage": true,
             "networkStatusCheckInterval": 5000,
@@ -47,11 +56,10 @@
             		"Stage"
         		],
         		"personAttributes": [
-            		"class",
-            		"caste"
+            		
         		],
         		"additionalPatientIdentifiers": [
-           			"National ID"
+           			
        		],
         		"preferredIdentifier": "Id_Number"
     	},
@@ -66,7 +74,7 @@
         },
         "allowConsultationWhenNoOpenVisit": false,
         "defaultVisitType": "OPD",
-        "visitTypeForRetrospectiveEntries": "Special OPD",
+        "visitTypeForRetrospectiveEntries": "OPD",
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": false,
         "conceptSetUI": {
@@ -76,56 +84,6 @@
                 "nonCodedConceptName":"Non-Coded Chief Complaint",
                 "durationRequired": false,
                 "allowAddMore": true
-            },
-            "Tuberculosis, Adverse Effects" :{
-                "multiSelect" : true,
-                "autocomplete" : true
-            },
-            "Posture": {
-                "buttonSelect": true
-            },
-            "P/A Presenting Part": {
-                "multiSelect": true
-            },
-            "FHS": {
-                "buttonSelect": true
-            },
-            "P/S (Per Speculum) - Cervix": {
-                "grid": true
-            },
-            "Anaemia, Stopped Since When": {
-                "conciseText": true
-            },
-            "Examination Notes": {
-                "conciseText": true
-            },
-            "Set1": {
-                "allowAddMore": true
-            },
-            "Set2": {
-                "allowAddMore": true
-            },
-            "Coded3": {
-                "multiSelect": true
-            },
-            "Image": {
-                "allowAddMore": true
-            },
-            "Gynaecology, Gravida": {
-                "stepper": true
-            },
-            "Accepted Family Planning methods": {
-                "multiSelect": true
-            },
-            "defaults": {
-                "Number of living children": 1,
-                "Accepted Family Planning methods": [
-                    "Condoms",
-                    "Pills"
-                ],
-                "Pain management given": true,
-                "Safe Abortion, Remarks": "Remarks",
-                "Malaria, Death Date": "2015-12-01"
             }
         },
         "visitPage": {

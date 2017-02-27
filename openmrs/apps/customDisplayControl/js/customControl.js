@@ -149,4 +149,60 @@ angular.module('bahmni.common.displaycontrol.custom')
         },
         template: '<ng-include src="contentUrl"/>'
     }
-}]);
+}]).directive('referralsummaryFooter', ['$q','observationsService','appService', 'spinner','$sce', function ($q,observationsService,appService, spinner, $sce)
+           {
+               var link = function ($scope)
+               {
+
+                   var conceptRefFor = ["Referral Form, Referred For"];
+                    
+                   spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptRefFor, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                           $scope.obsRefFor = response.data[0];
+                       }));
+
+                   $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referralSummaryFooter.html";
+                   $scope.curDate=new Date();
+
+               };
+               var controller = function($scope){
+                $scope.htmlLabel = function(label){
+                    return $sce.trustAsHtml(label)
+                }
+               }
+               return {
+                   restrict: 'E',
+                   link: link,
+                   controller : controller,
+                   template: '<ng-include src="contentUrl"/>'
+               }
+           }]).directive('referralSummary', ['$q','observationsService','appService', 'spinner','$sce', function ($q,observationsService,appService, spinner, $sce)
+           {
+               var link = function ($scope)
+               {
+
+                   var conceptRefFrom = ["Referral Form, Referred From"];
+                    var conceptRefTo=["Referral Form, Referred To"];
+                    
+                   spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptRefFrom, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                           $scope.obsRefFrom = response.data[0];
+                       }));
+                     spinner.forPromise(observationsService.fetch($scope.patient.uuid, conceptRefTo, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                                   $scope.obsRefTo = response.data[0];
+                               }));
+
+                   $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/referralSummary.html";
+                   $scope.curDate=new Date();
+
+               };
+               var controller = function($scope){
+                $scope.htmlLabel = function(label){
+                    return $sce.trustAsHtml(label)
+                }
+               }
+               return {
+                   restrict: 'E',
+                   link: link,
+                   controller : controller,
+                   template: '<ng-include src="contentUrl"/>'
+               }
+           }]);
