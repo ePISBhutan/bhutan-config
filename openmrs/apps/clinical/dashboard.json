@@ -10,7 +10,8 @@
                 "displayOrder":0,
                 "ageLimit":100,
                 "patientAttributes":[  
-
+                    "CID",
+                    "FatherHusbandName"
                 ],
                 "addressFields":[  
                     "address1",
@@ -34,7 +35,6 @@
                 "showLinks":[  
                     "home",
                     "visit",
-                    "registration",
                     "inpatient"                    
                 ]
             },
