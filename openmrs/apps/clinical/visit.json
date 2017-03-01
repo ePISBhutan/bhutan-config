@@ -43,7 +43,7 @@
         "translationKey": "DASHBOARD_TAB_DISCHARGE_SUMMARY_KEY",
         "printing": {
             "title": "Bahmni",
-            "header": "Discharge Summary",
+            "header": "Discharge Certificate",
             "logo": "../images/bahmniLogo.png"
         },
         "sections": {
@@ -52,8 +52,8 @@
                 "displayOrder": 0,
                 "config": {
                     "title": "PatientInformation",
-                    "patientAttributes": ["caste", "class", "education", "occupation", "debt", "distanceFromCenter", "isUrban", "cluster","RationCard", "familyIncome"],
-                    "addressFields": ["address1", "address2", "cityVillage", "countryDistrict"]
+                    "patientAttributes": [],
+                    "addressFields": []
                 }
             },
             "admissionDetails":{
@@ -65,24 +65,7 @@
 
                 }
             },
-            "weightInitial":{
-                "type": "observation",
-                "displayOrder": 2,
-                "translationKey":"DISCHARGE_SUMMARY_AT_ADMISSION_KEY",
-                "config": {
-                    "conceptNames": ["WEIGHT"],
-                    "scope": "initial"
-                }
-            },
-            "weightLatest": {
-                "type": "observation",
-                "displayOrder": 3,
-                "translationKey":"DISCHARGE_SUMMARY_AT_DISCHARGE_KEY",
-                "config": {
-                    "conceptNames": ["WEIGHT"],
-                    "scope": "latest"
-                }
-            },
+  
             "diagnoses":{
                 "type": "diagnosis",
                 "displayOrder": 4,
@@ -99,11 +82,8 @@
                 "translationKey": "DISCHARGE_SUMMARY_CLINICAL_NOTES_KEY",
                 "config": {
                     "conceptNames": [
-                        "History and Examination Notes",
-                        "Discharge Summary",
-                        "Lab Investigation Notes",
-                        "Radiology Notes",
-                        "Other Notes"
+                        "Discharge_Summary_Bhutan"
+                      
                     ],
                     "scope": "latest",
                     "numberOfVisits": "1"
@@ -113,9 +93,9 @@
                 "type": "investigationResult",
                 "displayOrder": 6,
                 "config": {
-                    "translationKey":"LAB_INVESTIGATION",
-                    "showChart": true,
-                    "showTable": false,
+                    "translationKey":"LAB_INVESTIGATIONS_KEY",
+                    "showChart": false,
+                    "showTable": true,
                     "showNormalLabResults": true,
                     "showCommentsExpanded": true,
                     "showAccessionNotes": true,
@@ -137,20 +117,8 @@
                     "showDrugForm": true,
                     "showProvider":false
                 }
-            },
-            "adviceOnDischarge":{
-                "type": "observation",
-                "displayOrder": 8,
-                "translationKey":"DISCHARGE_SUMMARY_ADVICE_ON_DISCHARGE_KEY",
-                "config": {
-                    "conceptNames": [
-                        "Additional Advice on Discharge",
-                        "Follow up Date",
-                        "Discharge Summary, Plan for follow up"
-                    ],
-                    "scope": "latest"
-                }
             }
+
         }
     },
     "orders":{
