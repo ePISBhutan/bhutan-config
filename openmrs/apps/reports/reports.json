@@ -1,5 +1,5 @@
 {
-   "Visitcount_All": {
+   "visitCountAll": {
        "name": "Visit Count Report",
        "type": "aggregation",
        "config": {
@@ -18,34 +18,14 @@
             "showTotalRow":true
        }
    },
-
-  "Visitcount_NB": {
-         "name": "Visit Count Report for Non Bhutanese",
-         "type": "aggregation",
-         "config": {
-             "report":{
-                 "type": "visits",
-                  "config": {
-                      "applyDateRangeFor": "visitStartDate",
-                      "patientAttributes": ["NonResidentialBhutaneseType"]
-                  }
-             },
-             "rowGroups": [
-                 "Visit Type"
-             ],
-              "columnGroups": [
-                 "NonResidentialBhutaneseType"
-             ],
-             "distinctGroups": [
-                 "Patient Identifier"
-             ],
-              "showTotalRow":true,
-              "showTotalColumn":true
-
-         }
-     },
-
-  "Visitcount_Gender": {
+   "visitCountNB": {
+    "name": "Visit Count Report for Non Bhutanese",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/visitCountNB.sql"
+    }
+  },
+  "visitCountGender": {
          "name": "Visit Count Report Based on Gender",
          "type": "aggregation",
          "config": {
