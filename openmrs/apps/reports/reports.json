@@ -49,5 +49,15 @@
               "showTotalColumn":true
 
          }
-     }
+     },
+  "morbidityReport": {
+            "name": "Morbidity Report",
+            "type": "diagnosisCount",
+            "config": {
+              "dateRangeRequired": true,
+              "applyDateRangeFor":"diagnosisDate",
+              "concept": "Diagnosis Set of Sets",
+              "ageGroupName": "Diagnosis Age Group"
+             }
+   }
 }
