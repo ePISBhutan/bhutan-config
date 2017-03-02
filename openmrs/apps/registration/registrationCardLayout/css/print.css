@@ -23,7 +23,7 @@ h1, h2, h3 {
 
 /* line 20, print.scss */
 .registrationCard-print-table {
-  width: 150mm;
+  width: 90mm;
   height: 83mm;
   overflow: scroll;
   margin: 0 auto;
