@@ -57,7 +57,9 @@
               "dateRangeRequired": true,
               "applyDateRangeFor":"diagnosisDate",
               "concept": "Diagnosis Set of Sets",
-              "ageGroupName": "Diagnosis Age Group"
+              "ageGroupName": "Diagnosis Age Group",
+              "rowsGroupBy": ["header_concept_name","leaf_concept_name"],
+             "columnsGroupBy": ["gender","agegroup_name"]
              }
    }
 }
