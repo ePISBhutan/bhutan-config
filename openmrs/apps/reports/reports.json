@@ -50,14 +50,28 @@
 
          }
      },
-  "morbidityReport": {
-            "name": "Morbidity Report",
+  "morbidityReportOpd": {
+            "name": "Morbidity Report For OPD",
             "type": "diagnosisCount",
             "config": {
               "dateRangeRequired": true,
               "applyDateRangeFor":"diagnosisDate",
               "concept": "Diagnosis Set of Sets",
               "ageGroupName": "Diagnosis Age Group",
+              "visitTypes":["OPD"],
+              "rowsGroupBy": ["header_concept_name","leaf_concept_name"],
+             "columnsGroupBy": ["gender","agegroup_name"]
+             }
+   },
+  "morbidityReportIpd": {
+            "name": "Morbidity Report For IPD",
+            "type": "diagnosisCount",
+            "config": {
+              "dateRangeRequired": true,
+              "applyDateRangeFor":"diagnosisDate",
+              "concept": "Diagnosis Set of Sets",
+              "ageGroupName": "Diagnosis Age Group",
+              "visitTypes":["IPD"],
               "rowsGroupBy": ["header_concept_name","leaf_concept_name"],
              "columnsGroupBy": ["gender","agegroup_name"]
              }
