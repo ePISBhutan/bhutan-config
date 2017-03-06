@@ -103,5 +103,35 @@
                 }
         ]
     }
-  }
+  },
+    "Delivery_Count": {
+       "name": "No of Delivery",
+       "type": "aggregation",
+       "config": {
+                    "report":{
+                    "type": "observations",
+                    "config": {
+        "patientAttributes": ["caste","class","education","occupation","primaryContact"],
+        "patientAddresses": ["address3","city_village"],
+        "visitAttributes": ["Visit Status","Admission Status"],
+        "showVisitInfo": true,
+        "showProvider": true,
+        "conceptNamesToFilter": ["Delivery Date and Time"],
+        "conceptNameDisplayFormat": "shortNamePreferred",
+        "locationTagsToFilter": [],
+        "programsToFilter": [],
+        "applyDateRangeFor": "obsDate",
+        "visitTypesToFilter": []
+    }
+},
+"rowGroups":["gender"],
+           
+           "distinctGroups": [
+               "Patient Identifier"
+           ],
+            "showTotalRow":false,
+            "showTotalColumn":false
+       }
+
+ }
 }
