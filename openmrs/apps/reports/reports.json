@@ -50,30 +50,58 @@
 
          }
      },
-  "morbidityReportOpd": {
-            "name": "Morbidity Report For OPD",
-            "type": "diagnosisCount",
-            "config": {
-              "dateRangeRequired": true,
-              "applyDateRangeFor":"diagnosisDate",
-              "concept": "Diagnosis Set of Sets",
-              "ageGroupName": "Diagnosis Age Group",
-              "visitTypes":["OPD"],
-              "rowsGroupBy": ["header_concept_name","leaf_concept_name"],
-             "columnsGroupBy": ["gender","agegroup_name"]
-             }
-   },
-  "morbidityReportIpd": {
-            "name": "Morbidity Report For IPD",
-            "type": "diagnosisCount",
-            "config": {
-              "dateRangeRequired": true,
-              "applyDateRangeFor":"diagnosisDate",
-              "concept": "Diagnosis Set of Sets",
-              "ageGroupName": "Diagnosis Age Group",
-              "visitTypes":["IPD"],
-              "rowsGroupBy": ["header_concept_name","leaf_concept_name"],
-             "columnsGroupBy": ["gender","agegroup_name"]
-             }
-   }
+  "morbidityReportOpdWithDeathCount": {
+    "name": "Morbidity Report For OPD",
+    "type": "concatenated",
+    "config": {
+        "reports": [
+                {
+                       "name": "Morbidity Report For OPD",
+                      "type": "diagnosisCount",
+                      "config": {
+                        "dateRangeRequired": true,
+                        "applyDateRangeFor":"diagnosisDate",
+                        "concept": "Diagnosis Set of Sets",
+                        "ageGroupName": "Diagnosis Age Group",
+                        "visitTypes":["OPD"],
+                        "rowsGroupBy": ["header_concept_name","leaf_concept_name"],
+                       "columnsGroupBy": ["gender","agegroup_name"]
+                       }
+                     },
+                     { "name": "Morbidity Dead Count",
+                      "type": "MRSGeneric",
+                      "config": {
+                        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/opdMorbidityDeadCount.sql"
+                      }
+                }
+        ]
+    }
+  },
+    "morbidityReportIpdWithDeathCount": {
+    "name": "Morbidity Report For IPD",
+    "type": "concatenated",
+    "config": {
+        "reports": [
+                {
+                      "name": "Morbidity Report For IPD",
+                      "type": "diagnosisCount",
+                      "config": {
+                        "dateRangeRequired": true,
+                        "applyDateRangeFor":"diagnosisDate",
+                        "concept": "Diagnosis Set of Sets",
+                        "ageGroupName": "Diagnosis Age Group",
+                        "visitTypes":["IPD"],
+                        "rowsGroupBy": ["header_concept_name","leaf_concept_name"],
+                       "columnsGroupBy": ["gender","agegroup_name"]
+                       }
+                     },
+                     { "name": "Morbidity Dead Count",
+                      "type": "MRSGeneric",
+                      "config": {
+                        "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/ipdMorbidityDeadCount.sql"
+                      }
+                }
+        ]
+    }
+  }
 }
