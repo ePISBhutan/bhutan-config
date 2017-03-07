@@ -54,7 +54,7 @@ FROM obs AS diagnosis
                     ON v.patient_id = p.person_id
 				        Left Join obs refIn
                 on refIn.person_id=diagnosis.person_id
-                and refIn.voided is false and refIn.concept_id=(select concept_id from concept_name where name ='Referral In' and concept_name_type='FULLY_SPECIFIED')
+                and refIn.voided is false and refIn.concept_id=(select concept_id from concept_name where name ='Refer In Details' and concept_name_type='FULLY_SPECIFIED')
                 Left Join obs refOut
                 on refOut.person_id=diagnosis.person_id
                 and refOut.voided is false and refOut.concept_id=(select concept_id from concept_name where name ='Referral Form' and concept_name_type='FULLY_SPECIFIED')
