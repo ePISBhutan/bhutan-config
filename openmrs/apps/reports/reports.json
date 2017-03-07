@@ -106,16 +106,30 @@
                       "config": {
                         "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/ipdMorbidityDeadCount.sql"
                       }
-                }
+                      },
+                      { "name": "Morbidity Refer Count",
+                            "type": "MRSGeneric",
+                            "config": {
+                              "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/ipdMorbidityRefInOut.sql"
+                            }
+                      }
         ]
     }
   },
+    "admissionCountNB": {
+    "name": "Admission Count Report for Non Bhutanese",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/nbAdmissionCount.sql"
+    }
+  },
+
     "Delivery_Count": {
        "name": "No of Delivery",
        "type": "aggregation",
        "config": {
                     "report":{
-                    "type": "observations",
+                    "type": "observations", 
                     "config": {
         "patientAttributes": ["caste","class","education","occupation","primaryContact"],
         "patientAddresses": ["address3","city_village"],
