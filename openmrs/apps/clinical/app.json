@@ -84,6 +84,15 @@
                 "nonCodedConceptName":"Non-Coded Chief Complaint",
                 "durationRequired": false,
                 "allowAddMore": true
+            },
+            "Referral Form, Referred From":{
+                "autocomplete" : true,
+                "answersConceptName":"Hospital Names"
+
+            },
+            "Referral Form, Referred To":{
+                "autocomplete" : true,
+                "answersConceptName":"Hospital Names"
             }
         },
         "visitPage": {

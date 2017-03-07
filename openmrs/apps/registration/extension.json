@@ -44,5 +44,21 @@
         },
         "order": 1,
         "requiredPrivilege": "Edit Visits"
+    },
+    "referInDetails":{
+        "id": "bahmni.registration.conceptSetGroup.nutritionalLevels",
+        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
+        "type": "config",
+        "extensionParams": {
+            "conceptName": "Refer In Details",
+            "translationKey": "REFERIN_VALUES_LOCALE_KEY",
+            "conceptNames": ["Refer In Details"],
+            "required":true,
+            "showLatest": true
+        },
+        "order": 2,
+        "requiredPrivilege": "Edit Visits"
     }
+
+    
 }

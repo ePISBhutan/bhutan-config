@@ -67,7 +67,14 @@
                 }
             ],
             "conceptSetUI": {
-                
+                "Refer In, Department referred to":{
+                "autocomplete" : true,
+                "answersConceptName":"Hospital Departments"
+                },
+                "Refer In, Referred From":{
+                "autocomplete" : true,
+                "answersConceptName":"Hospital Names"
+                },                
                 "FHS": {
                     "buttonSelect": true
                 },
