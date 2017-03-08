@@ -43,22 +43,39 @@ FROM obs AS diagnosis
                                        ON revised_and_ruled_out_diagnosis.obs_group_id = parent.obs_id
                                    WHERE parent.voided IS FALSE))
 
-                  JOIN encounter e
-                    ON diagnosis.encounter_id = e.encounter_id
-                  JOIN visit v
-                    ON e.visit_id = v.visit_id
-                  JOIN visit_type vt
-                    ON vt.visit_type_id = v.visit_type_id
-                    and vt.name='OPD'
-                  JOIN person p
-                    ON v.patient_id = p.person_id
-				        Left Join obs refIn
-                on refIn.person_id=diagnosis.person_id
-                and refIn.voided is false and refIn.concept_id=(select concept_id from concept_name where name ='Refer In Details' and concept_name_type='FULLY_SPECIFIED')
-                Left Join obs refOut
-                on refOut.person_id=diagnosis.person_id
-                and refOut.voided is false and refOut.concept_id=(select concept_id from concept_name where name ='Referral Form' and concept_name_type='FULLY_SPECIFIED')
-                where  cast(diagnosis.obs_datetime AS DATE) BETWEEN '#startDate#' and '#endDate#' AND diagnosis.voided IS FALSE
-                and (cast(refIn.obs_datetime AS DATE) BETWEEN '#startDate#' and '#endDate#' AND refIn.voided IS FALSE
-                OR cast(refOut.obs_datetime AS DATE) BETWEEN '#startDate#' and '#endDate#' AND refOut.voided IS FALSE)
-                group by cv.concept_full_name;
+  JOIN encounter e
+    ON diagnosis.encounter_id = e.encounter_id
+  JOIN visit v
+    ON e.visit_id = v.visit_id
+  JOIN visit_type vt
+    ON vt.visit_type_id = v.visit_type_id
+       and vt.name='OPD'
+  JOIN person p
+    ON v.patient_id = p.person_id
+  Left Join
+  (
+    Select refInO.person_id from obs refInO
+    join encounter refInE on refInE.encounter_id=refInO.encounter_id
+    join visit refInV on refInV.visit_id=refInE.visit_id
+    JOIN visit_type refInVT ON refInVT.visit_type_id = refInV.visit_type_id
+    where cast(refInO.obs_datetime AS DATE) BETWEEN '#startDate#' and '#endDate#'
+        AND refInO.voided IS FALSE
+        and refInVT.name='OPD'
+        and  refInO.concept_id=(select concept_id from concept_name where name ='Refer In Details' and concept_name_type='FULLY_SPECIFIED')
+  ) as refIn
+  on refIn.person_id=diagnosis.person_id
+
+  Left Join
+  (
+      Select refOutO.person_id from obs refOutO
+      join encounter refOutE on refOutE.encounter_id=refOutO.encounter_id
+      join visit refOutV on refOutV.visit_id=refOutE.visit_id
+      JOIN visit_type refOutVT ON refOutVT.visit_type_id = refOutV.visit_type_id
+      where cast(refOutO.obs_datetime AS DATE) BETWEEN '#startDate#' and '#endDate#'
+          AND refOutO.voided IS FALSE
+          and refOutVT.name='OPD'
+          and  refOutO.concept_id=(select concept_id from concept_name where name ='Referral Form' and concept_name_type='FULLY_SPECIFIED')
+    ) as refOut
+    on refOut.person_id=diagnosis.person_id
+where  cast(diagnosis.obs_datetime AS DATE) BETWEEN '#startDate#' and '#endDate#' AND diagnosis.voided IS FALSE
+group by cv.concept_full_name;
