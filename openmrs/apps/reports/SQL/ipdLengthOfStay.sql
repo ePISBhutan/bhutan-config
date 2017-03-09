@@ -1,13 +1,14 @@
 select 
 patient_identifier.identifier as Identifier, 
 concat(pname.given_name,' ',pname.family_name) as 'Patient Name',
-sum(datediff(bedpatmap.date_stopped,bedpatmap.date_started)) as 'Length of stay in days' ,
-person_address.city_village as City,
-person.gender as Sex ,
 floor(datediff(now(),person.birthdate)/365) as 'Age',
+person.gender as Sex ,
 ifnull(NBStatus.name,'B') as 'Nationality',
+person_address.city_village as City,
 bedpatmap.date_started as 'Date of Admission', 
-bedpatmap.date_stopped as 'Date of Discharge'
+bedpatmap.date_stopped as 'Date of Discharge',
+case when date(bedpatmap.date_stopped)=date(bedpatmap.date_started) then 1 else
+sum(datediff(ifnull(bedpatmap.date_stopped,now()),bedpatmap.date_started)) end as 'Length of stay in days'
 from 
 bed_patient_assignment_map bedpatmap
 inner join person_name pname
