@@ -85,6 +85,12 @@
                 "durationRequired": false,
                 "allowAddMore": true
             },
+
+             "Follow up Date": {
+                "allowFutureDates": true
+            },
+
+
             "Referral Form, Referred From":{
                 "autocomplete" : true,
                 "answersConceptName":"Hospital Names"

@@ -97,9 +97,9 @@
                     "field": "address2"
                 },
                 "customAttributes": {
-                    "label": "Local Patient Name",
-                    "placeholder": "Local Patient Name",
-                    "fields": ["givenNameLocal", "middleNameLocal", "familyNameLocal"]
+                    "label": "CID",
+                    "placeholder": "CID Number",
+                    "fields": ["CID"]
                 }
             }
         }
