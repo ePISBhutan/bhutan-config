@@ -183,7 +183,7 @@
                        "applyDateRangeFor": "obsDate"
                }
            },
-           "rowGroups": ["Gender"],
+           "rowGroups": ["Visit Type"],
            "distinctGroups": [
                "Patient Identifier"
            ],
@@ -204,7 +204,7 @@
                        "applyDateRangeFor": "obsDate"
                }
            },
-           "rowGroups": ["Gender"],
+           "rowGroups": ["Visit Type"],
            "distinctGroups": [
                "Patient Identifier"
            ],
