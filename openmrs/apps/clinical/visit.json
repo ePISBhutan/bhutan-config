@@ -82,7 +82,7 @@
                 "translationKey": "DISCHARGE_SUMMARY_CLINICAL_NOTES_KEY",
                 "config": {
                     "conceptNames": [
-                        "Discharge_Summary_Bhutan"
+                        "Discharge Summary"
                       
                     ],
                     "scope": "latest",
