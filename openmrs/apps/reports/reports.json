@@ -138,7 +138,7 @@
         "visitAttributes": ["Visit Status","Admission Status"],
         "showVisitInfo": true,
         "showProvider": true,
-        "conceptNamesToFilter": ["Delivery Date and Time"],
+        "conceptNamesToFilter": ["DR,Sex"],
         "conceptNameDisplayFormat": "shortNamePreferred",
         "locationTagsToFilter": [],
         "programsToFilter": [],
@@ -146,7 +146,7 @@
         "visitTypesToFilter": []
     }
 },
-"rowGroups":["gender"],
+"rowGroups":["Value"],
            
            "distinctGroups": [
                "Patient Identifier"

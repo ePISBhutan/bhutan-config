@@ -25,29 +25,29 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-        'Mode of Delivery' : function (formName, formFieldValues) {
-        var delivery_mode = formFieldValues['Mode of Delivery'];
+        'DR,Mode of Delivery' : function (formName, formFieldValues) {
+        var delivery_mode = formFieldValues['DR,Mode of Delivery'];
         
         if (delivery_mode =="Others") {
             return {
-                enable: ["Other Mode of Delivery"]
+                enable: ["DR,Other Mode of Delivery"]
             }
         } else {
             return {
-                disable: ["Other Mode of Delivery"]
+                disable: ["DR,Other Mode of Delivery"]
             }
         }
     },
-            'Term' : function (formName, formFieldValues) {
-        var delivery_term = formFieldValues['Term'];
+            'DR,Term' : function (formName, formFieldValues) {
+        var delivery_term = formFieldValues['DR,Term'];
         
         if (delivery_term =="Others") {
             return {
-                enable: ["Other Term"]
+                enable: ["DR,Other Term"]
             }
         } else {
             return {
-                disable: ["Other Term"]
+                disable: ["DR,Other Term"]
             }
         }
     }
