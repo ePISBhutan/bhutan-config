@@ -20,6 +20,7 @@ from (/*Pivoting the table row to column*/
               where pat.name='NonResidentialBhutaneseType'
                   and cn.concept_name_type='FULLY_SPECIFIED'
                   and cast(v.date_started AS DATE) BETWEEN '#startDate#' and '#endDate#'
+                  and v.voided is false
               group by vt.name,cn.name
             ) as NbVisitCount
      ) as NbVisitCount1 Group by VisitType;
