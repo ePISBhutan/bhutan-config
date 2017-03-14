@@ -87,7 +87,7 @@
                     "fields" : ["address2"]
                 },
                 "personAttributes": {
-                    "fields": ["CID" ]
+                    "fields": [ ]
                 }
             },
             "patientSearch": {
@@ -97,9 +97,9 @@
                     "field": "address2"
                 },
                 "customAttributes": {
-                    "label": "CID",
-                    "placeholder": "CID Number",
-                    "fields": ["CID"]
+                    "label": "Father/Husband Name",
+                    "placeholder": "Father/Husband Name",
+                    "fields": ["FatherHusbandName"]
                 }
             }
         }
