@@ -18,10 +18,12 @@
         ],
         "config" : {
             "patientInformation": {
-                "additionalPatientInformation": {
-                    "title": "Additional Patient Information",
+                "NonBhutaneseInformation": {
+                    "title": "Non Bhutanese information",
+                    "translationKey": "Non Bhutanese information",
                     "attributes": [
-                        
+                        "NonResidentialBhutaneseType",
+                        "PassportIdNumber"
                     ]
                 },
                 "hidden": {
@@ -42,12 +44,12 @@
                 "Parent":"patient"
             },
 
-            "autoCompleteFields":["familyName", "caste"],
-            "defaultIdentifierPrefix": "GAN",
+            "autoCompleteFields":[],
+            "defaultIdentifierPrefix": "PAR",
             "defaultVisitType": "OPD",
             "searchByIdForwardUrl": "/patient/{{patientUuid}}",
-            "showMiddleName": true,
-            "showBirthTime": true,
+            "showMiddleName": false,
+            "showBirthTime": false,
             "showCasteSameAsLastNameCheckbox": false,
             "printOptions": [
                 {
@@ -78,28 +80,32 @@
                 }
             },
             "fieldValidation" : {
+                "ContactNo" : {"pattern" : "[0-9]{8,10}", "errorMessage" : "Should be contain 8 digits"},
                 "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"}
             },
             "patientSearchResults": {
                 "address": {
-                    "fields" : ["address2"]
+                    "fields" : ["city_village"]
                 },
                 "personAttributes": {
-                    "fields": [ ]
+                    "fields": [ 
+                        "ContactNo",
+                        "FatherHusbandName"
+                    ]
                 }
             },
             "patientSearch": {
                 "address": {
-                    "label": "Rural Ward",
-                    "placeholder": "Enter ward",
-                    "field": "address2"
+                    "label": "Village name",
+                    "placeholder": "Enter village name",
+                    "field": "city_village"
                 },
                 "customAttributes": {
-                    "label": "Father/Husband Name",
-                    "placeholder": "Father/Husband Name",
-                    "fields": ["FatherHusbandName"]
+                    "label": "Contact no",
+                    "placeholder": "Contact no",
+                    "fields": ["ContactNo"]
                 }
             }
         }
