@@ -24,7 +24,7 @@ h1, h2, h3 {
 /* line 20, print.scss */
 .registrationCard-print-table {
   width: 90mm;
-  height: 83mm;
+  height: 70mm;
   overflow: scroll;
   margin: 0 auto;
   table-layout: fixed;
@@ -129,5 +129,6 @@ h1, h2, h3 {
 
 /* line 84, print.scss */
 .hindi-text {
+  font-size: 3mm;
   vertical-align: bottom;
 }

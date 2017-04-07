@@ -80,7 +80,7 @@
                 }
             },
             "fieldValidation" : {
-                "ContactNo" : {"pattern" : "[0-9]{8,10}", "errorMessage" : "Should be contain 8 digits"},
+                "ContactNo" : {"pattern" : "[0-9]{7,10}", "errorMessage" : "Should be contain 8 digits"},
                 "familyName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "givenName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"},
                 "middleName" : {"pattern" : "[a-zA-Z]{0,}", "errorMessage" : "Should contain characters"}

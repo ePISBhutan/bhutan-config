@@ -99,6 +99,18 @@
             "Referral Form, Referred To":{
                 "autocomplete" : true,
                 "answersConceptName":"Hospital Names"
+            },
+            "Left Upper Jaw": {
+                "multiSelect": true
+            },
+            "Right Upper Jaw": {
+                "multiSelect": true
+            },
+            "Left Lower Jaw": {
+                "multiSelect": true
+            },
+            "Right Lower Jaw": {
+                "multiSelect": true
             }
         },
         "visitPage": {
