@@ -13,7 +13,7 @@
                "Visit Type"
            ],
            "distinctGroups": [
-               "Patient Identifier"
+               "Visit Id"
            ],
             "showTotalRow":true
        }
