@@ -111,6 +111,9 @@
             },
             "Right Lower Jaw": {
                 "multiSelect": true
+            },
+            "Vitals":{
+                "hideAbnormalButton" : true
             }
         },
         "visitPage": {
