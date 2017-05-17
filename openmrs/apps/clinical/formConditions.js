@@ -25,7 +25,33 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-        'DR,Mode of Delivery' : function (formName, formFieldValues) {
+    'Hypertension Form, Diastolic Data' : function (formName, formFieldValues) {
+        var systolic = formFieldValues['Hypertension Form, Systolic'];
+        var diastolic = formFieldValues['Hypertension Form, Diastolic'];
+        if (systolic || diastolic) {
+            return {
+                enable: ["Hypertension Form, Posture"]
+            }
+        } else {
+            return {
+                disable: ["Hypertension Form, Posture"]
+            }
+        }
+    },
+    'Hypertension Form, Systolic Data' : function (formName, formFieldValues) {
+        var systolic = formFieldValues['Hypertension Form, Systolic'];
+        var diastolic = formFieldValues['Hypertension Form, Diastolic'];
+        if (systolic || diastolic) {
+            return {
+                enable: ["Hypertension Form, Posture"]
+            }
+        } else {
+            return {
+                disable: ["Hypertension Form, Posture"]
+            }
+        }
+    },
+    'DR,Mode of Delivery' : function (formName, formFieldValues) {
         var delivery_mode = formFieldValues['DR,Mode of Delivery'];
         
         if (delivery_mode =="Others") {
@@ -38,7 +64,7 @@ Bahmni.ConceptSet.FormConditions.rules = {
             }
         }
     },
-            'DR,Term' : function (formName, formFieldValues) {
+    'DR,Term' : function (formName, formFieldValues) {
         var delivery_term = formFieldValues['DR,Term'];
         
         if (delivery_term =="Others") {
