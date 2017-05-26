@@ -91,20 +91,6 @@
 
                 }
             },
-            "Treatments": {
-                "type": "treatment",
-                "displayOrder": 3,
-                "config": {
-                    "translationKey": "Treatment given",
-                    "showFlowSheet": false,
-                    "showListView": true,
-                    "showOtherActive": false,
-                    "showDetailsButton": true,
-                    "showRoute": true,
-                    "showDrugForm": true,
-                    "showProvider":false
-                }
-            },
             "labInvestigations":{
                 "type": "investigationResult",
                 "displayOrder": 4,
@@ -120,6 +106,18 @@
                     "latestAccessionCount": 1
                 }
             },
+            "dischargeTreatmentGiven":{
+                "type": "observation",
+                "displayOrder": 6,
+                "translationKey": "DISCHARGE_SUMMARY_TREATMENTS_GIVEN_KEY",
+                "config": {
+                    "conceptNames": [
+                        "Consultation Note" 
+                    ],
+                    "scope": "latest"
+                }
+            },
+            
             "instructionOnDischarge":{
                 "type": "observation",
                 "displayOrder": 6,
