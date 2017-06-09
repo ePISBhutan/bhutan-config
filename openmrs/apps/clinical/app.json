@@ -112,7 +112,8 @@
                 "multiSelect": true
             },
             "Vitals":{
-                "hideAbnormalButton" : true
+                "hideAbnormalButton" : true,
+                "allowAddMore": true
             },
             "Diabetes screening form":{
                "hideAbnormalButton" : true
@@ -183,6 +184,9 @@
               "disableAddNotes":true
             },
             "Hypertension RBS Data":{
+              "disableAddNotes":true
+            },
+            "Vitals RBS Data":{
               "disableAddNotes":true
             }
 
