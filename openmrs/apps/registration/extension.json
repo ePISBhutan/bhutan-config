@@ -30,20 +30,6 @@
         "icon": "fa-patient-edit",
         "order": 1,
         "requiredPrivilege": "View Patients"
-    },
-    "referInDetails":{
-        "id": "bahmni.registration.conceptSetGroup.nutritionalLevels",
-        "extensionPointId": "org.bahmni.registration.conceptSetGroup.observations",
-        "type": "config",
-        "extensionParams": {
-            "conceptName": "Refer In Details",
-            "translationKey": "REFERIN_VALUES_LOCALE_KEY",
-            "conceptNames": ["Refer In Details"],
-            "required":true,
-            "showLatest": true
-        },
-        "order": 1,
-        "requiredPrivilege": "Edit Visits"
     }
 
     

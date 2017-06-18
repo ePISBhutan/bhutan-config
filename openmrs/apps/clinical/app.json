@@ -81,15 +81,24 @@
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": false,
         "conceptSetUI": {
+            "Cross referral": {
+                "autocomplete":true,
+                "allowAddMore": true
+            },
             "H&E, Chief Complaint": {
                 "required":true
             },
-
-             "Follow up Date": {
+            "Follow up Date": {
                 "allowFutureDates": true
             },
-
-
+            "Refer In, Department referred to":{
+                "autocomplete" : true,
+                "answersConceptName":"Hospital Departments"
+                },
+            "Refer In, Referred From":{
+                "autocomplete" : true,
+                "answersConceptName":"Hospital Names"
+            },
             "Referral Form, Referred From":{
                 "autocomplete" : true,
                 "answersConceptName":"Hospital Names"
