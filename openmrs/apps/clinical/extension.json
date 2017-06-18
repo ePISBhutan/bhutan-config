@@ -54,6 +54,19 @@
     "order": 5,
     "requiredPrivilege": "app:radiologyOrders"
   },
+  "bahmniClinicalPatientsSearchMyPatients": {
+      "id": "bahmni.clinical.patients.search.MyPatients",
+      "extensionPointId": "org.bahmni.patient.search",
+      "type": "config",
+      "extensionParams": {
+        "searchHandler": "emrapi.sqlSearch.MyPatients",
+        "display": "My Patients",
+        "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+      },
+      "label": "My Patients",
+      "order": 1,
+      "requiredPrivilege": "app:clinical"
+  },
   "bahmniClinicalPatientsSearchOPDPatients": {
     "id": "bahmni.clinical.patients.search.OPDPatients",
     "extensionPointId": "org.bahmni.patient.search",
@@ -64,7 +77,7 @@
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "Active",
-    "order": 1,
+    "order": 2,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalPatientsSearchIPDPatients": {
@@ -77,7 +90,7 @@
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "Active",
-    "order": 2,
+    "order": 3,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalPatientsSearchEYEPatients": {
@@ -90,7 +103,7 @@
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "Active",
-    "order": 3,
+    "order": 4,
     "requiredPrivilege": "app:clinical"
   },
     "bahmniClinicalPatientsSearchEntPatients": {
@@ -103,7 +116,7 @@
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "Active",
-    "order": 4,
+    "order": 5,
     "requiredPrivilege": "app:clinical"
   },
 
@@ -117,7 +130,7 @@
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "Active",
-    "order": 5,
+    "order": 6,
     "requiredPrivilege": "app:clinical"
   },
 
@@ -131,7 +144,7 @@
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "Active",
-    "order": 6,
+    "order": 7,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalPatientsSearchPharmacyPatients": {
@@ -143,7 +156,7 @@
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "Pharmacy",
-    "order": 7,
+    "order": 8,
     "requiredPrivilege": "app:clinical"
   },
 
@@ -156,7 +169,7 @@
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "All",
-    "order": 8,
+    "order": 9,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsHistory": {

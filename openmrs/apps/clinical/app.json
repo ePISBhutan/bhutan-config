@@ -208,6 +208,10 @@
             },
             "Vitals, Posture":{
               "disableAddNotes":true
+            },
+            "Follow up Form, Follow up Date":{
+              "allowFutureDates": true,
+              "disableAddNotes":true
             }
 
         },
