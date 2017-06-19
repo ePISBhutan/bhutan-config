@@ -212,6 +212,27 @@
             "Follow up Form, Follow up Date":{
               "allowFutureDates": true,
               "disableAddNotes":true
+            },
+            "Eye Form":{
+                "hideAbnormalButton" : true
+            },
+            "Eye, Chief Complaint":{
+              "required":true
+            },
+            "DV, OD":{
+              "required":true
+            },
+            "DV, OS":{
+              "required":true
+            },
+            "NV, @":{
+              "disableAddNotes":true
+            },
+            "IOP, OD":{
+              "disableAddNotes":true
+            },
+            "IOP, OS":{
+              "disableAddNotes":true
             }
 
         },
