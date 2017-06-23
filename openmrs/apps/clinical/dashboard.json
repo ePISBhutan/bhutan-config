@@ -396,6 +396,52 @@
             }
 
         }
+    },
+    "eyeform": {
+        "translationKey": "Ophthalmology",
+        "displayType": "Full-Page",
+        "printing": {
+            "title": "",
+            "header": "",
+            "logo": ""
+        },
+        "sections": {
+            "eyeDiagnosis":{
+            "translationKey":"DASHBOARD_TITLE_DIAGNOSIS_KEY",
+            "type":"diagnosis",
+                "displayType": "Full-Page",
+            "showCertainty":true,
+            "showOrder":true,
+            "showDetailsButton":true,
+            "displayOrder":0
+        },
+            "eyeForm":{
+                "translationKey":"DASHBOARD_TITLE_EYE_KEY",
+                "displayType": "Full-Page",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":1,
+                "dashboardConfig":{
+                    "showDetailsButton":true,
+                    "conceptNames":[
+                        "Eye Form",
+                        "Eye PMT/Acceptance form"
+                    ],
+                    "numberOfVisits":2
+                },
+                "expandedViewConfig":{
+                    "conceptNames":[
+                        "Eye Form",
+                        "Eye PMT/Acceptance form"
+                    ],
+                    "numberOfVisits":5,
+                    "showDetailsButton":true,
+                    "pivotTable":{
+
+                    }
+                }
+            }
+        }
     }
   
 }

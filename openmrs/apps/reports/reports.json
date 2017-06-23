@@ -60,9 +60,9 @@
                         "config": {
                           "dateRangeRequired": true,
                           "applyDateRangeFor":"diagnosisDate",
-                          "concept": "Diagnosis Set of Sets",
                           "ageGroupName": "Diagnosis Age Group",
                           "visitTypes":["OPD"],
+                          "concept": "Diagnosis Set of Sets",
                           "rowsGroupBy": ["header_concept_name","leaf_concept_name"],
                          "columnsGroupBy": ["gender","agegroup_name"]
                          }
@@ -235,16 +235,69 @@
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/nCDReport.sql"
     }
+},
+  "eyeReport": {
+         "name": "Morbidity report for Eye",
+         "type": "aggregation",
+         "config": {
+             "report":{
+                 "type": "observations",
+                  "config": {
+                      "visitAttributes": ["Visit Status", "Admission Status"],
+                      "showVisitInfo": true,
+                      "conceptNamesToFilter": ["Coded Diagnosis"],
+                      "conceptValuesToFilter":["B02 Herpes Zoster",
+                                                "C69 Malignant neoplasa of eye & adnexa",
+                                                "G51 Facial nerve disorders",
+                                                "H02 Other diseases of the eyelids",
+                                                "H04 Disorders of lacrimal system",
+                                                "H05 Disorders of orbit",
+                                                "H10 Conjunctivitis",
+                                                "H11 Disorders of conjunctiva",
+                                                "H15 Disorders of sclera",
+                                                "H16 Keratitis",
+                                                "H16.03 Corneal ulcer",
+                                                "H17 Corneal scar and opacity",
+                                                "H18 Other disorders of cornea",
+                                                "H20 Iridocyclitis/Uveitis",
+                                                "H25 Senile cataract",
+                                                "H26 Other cataract",
+                                                "H27 Aphakia",
+                                                "H33 Retinal detachment and breaks",
+                                                "H34 Retinal vascular disorders",
+                                                "H40 Glaucoma",
+                                                "H44 Disorders of globe",
+                                                "H50 Other strabismus",
+                                                "H51 Other disorders of binocular movement",
+                                                "H52 Disorders of Refraction & Accommodation (Refractive Error in the Eye)",
+                                                "H53 Visual disturbances",
+                                                "H54 Blindness and low vision",
+                                                "H55 Nystagmus & other irregular eye movements",
+                                                "R51 Headache",
+                                                "S05 Injury of eye and orbit",
+                                                "T15 Foreign body on external eye",
+                                                "T26 Burn & corrosion confined to eye and adnexa",
+                                                "H57 Other disorder of eye and adnexa",
+                                                "Z96.1 Pseudophakia"
+                                              ],
+                      "conceptClassesToFilter": [],
+                      "visitTypesToFilter": ["EYE"],
+                      "applyDateRangeFor": "obsDate",
+                      "ageGroupName":"Eye Age Group"
+                  }
+             },
+             "rowGroups": [
+                 "Value"
+             ],
+              "columnGroups": [
+                 "Eye Age Group"
+             ],
+             "distinctGroups": [
+                 "Patient Identifier"
+             ],
+              
+            "showTotalColumn":true
+
+         }
+     }
 }
-
-
-
-}
-
-
-    
-
-
-
-
-
