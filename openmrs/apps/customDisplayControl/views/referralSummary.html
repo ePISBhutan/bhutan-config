@@ -25,18 +25,23 @@
 		</span>
 		<br><br>
 		<span class="increased-font">
-			<strong>House No : </strong> {{patient.address.address1}}
+			<strong>Local address : </strong> {{patient.address.address1}}
 		</span>
-		<span class="increased-font padding-span">
+		<br><br><br>
+		<span class="increased-font">
+			<strong>Permanent Address :</strong>
+		</span>
+		<br>
+		<span class="permanent-address-fields">
 			<strong>Village : </strong>{{patient.address.cityVillage}}
 		</span>
-		<span class="increased-font padding-span">
+		<span class="permanent-address-fields">
 			<strong>Gewog : </strong>{{patient.address.address3}}
 		</span>
-		<span class="increased-font padding-span">
+		<span class="permanent-address-fields">
 			<strong>Dz : </strong>{{patient.address.countyDistrict}}
 		</span>
-		<br><br>
+		<br><br><br>
 		<span class="increased-font">
 			<strong>Referred To : </strong> {{obsRefTo.valueAsString}}
 		</span>
