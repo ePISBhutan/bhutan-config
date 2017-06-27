@@ -233,7 +233,13 @@
             },
             "IOP, OS":{
               "disableAddNotes":true
-            }
+            },
+          "IPD Nurse Notes Form":{
+            "allowAddMore": true
+          },
+          "NN, Date and time":{
+            "disableAddNotes":true
+          }
         },
         "visitPage": {
             "observationDisplay": {
