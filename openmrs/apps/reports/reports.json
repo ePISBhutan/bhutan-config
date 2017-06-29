@@ -155,66 +155,13 @@
        }
 
  },
-   "Concatenated Daily Census Report": {
+  "dailyCensusReport": {
     "name": "Daily Census Report",
-    "type": "concatenated",
+    "type": "MRSGeneric",
     "config": {
-        "reports": [
-        {
-       "name": "Daily Census Report Admission/Discharge",
-    "type": "VisitAggregateCount",
-    "config": {
-               "type": "VisitAggregateCountReport",
-               "locationTagNames": ["Admission Location", "Visit Location", "Login Location"],
-               "visitTypes": "'IPD','OPD','EMERGENCY','Lab','MCH','Dental','ENT'"
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/dailyCensus.sql"
     }
-    },
-            {
-            "name": "Daily Census Report Referred Out",
-       "type": "aggregation",
-       "config": {
-           "report":{
-               "type": "observations",
-               "config": {
-                   "conceptNamesToFilter":["Referral Form"],
-                   "showVisitInfo" : true,
-                   "forDataAnalysis": true,
-                       "applyDateRangeFor": "obsDate"
-               }
-           },
-           "rowGroups": ["Visit Type"],
-           "distinctGroups": [
-               "Patient Identifier"
-           ],
-            "showTotalRow":false,
-            "showTotalColumn":false
-       }
-            },
-
-        { "name": "Daily Census Report Referred In",
-         "type": "aggregation",
-           "config": {
-           "report":{
-               "type": "observations",
-               "config": {
-                   "conceptNamesToFilter":["Refer In Details"],
-                   "showVisitInfo" : true,
-                   "forDataAnalysis": true,
-                       "applyDateRangeFor": "obsDate"
-               }
-           },
-           "rowGroups": ["Visit Type"],
-           "distinctGroups": [
-               "Patient Identifier"
-           ],
-            "showTotalRow":false,
-            "showTotalColumn":false
-       }
-            }
-
-        ]
-    }
-},
+  },
 "LengthOfStay": {
     "name": "Length of Stay Per Patient",
     "type": "MRSGeneric",
