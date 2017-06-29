@@ -162,6 +162,13 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/dailyCensus.sql"
     }
   },
+  "monthlyDischargeReport": {
+    "name": "Monthly Discharge Report",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/monthlyDischargeReport.sql"
+    }
+  },
 "LengthOfStay": {
     "name": "Length of Stay Per Patient",
     "type": "MRSGeneric",
