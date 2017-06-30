@@ -273,11 +273,11 @@ angular.module('bahmni.common.displaycontrol.custom')
                     var count;
 
 
-                    spinner.forPromise(observationsService.fetch($scope.patient.uuid, medication, "latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                    spinner.forPromise(observationsService.fetch($scope.patient.uuid, medication, undefined, 1, undefined, undefined).then(function (response) {
                         $scope.obsMedication = response.data[0];
                     }));
 
-                    spinner.forPromise(observationsService.fetch($scope.patient.uuid, nonCodedDiagnosis,"latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                    spinner.forPromise(observationsService.fetch($scope.patient.uuid, nonCodedDiagnosis,undefined, 1, undefined, undefined).then(function (response) {
                         for(count=0; count<response.data.length;count++)
                         {
                             if(nonCodedDiagnosisResponse=='')
@@ -292,7 +292,7 @@ angular.module('bahmni.common.displaycontrol.custom')
 
                     }));
 
-                    spinner.forPromise(observationsService.fetch($scope.patient.uuid, codedDiagnosis,"latest", undefined, $scope.visitUuid, undefined).then(function (response) {
+                    spinner.forPromise(observationsService.fetch($scope.patient.uuid, codedDiagnosis,undefined, 1, undefined, undefined).then(function (response) {
 
                         codedDiagnosisResponse=nonCodedDiagnosisResponse;
 
