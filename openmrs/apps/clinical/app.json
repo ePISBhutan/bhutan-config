@@ -209,6 +209,9 @@
             "Vitals, Posture":{
               "disableAddNotes":true
             },
+            "Vitals, Blood Pressure":{
+             "allowAddMore":true
+              },
             "Follow up Form, Follow up Date":{
               "allowFutureDates": true,
               "disableAddNotes":true
