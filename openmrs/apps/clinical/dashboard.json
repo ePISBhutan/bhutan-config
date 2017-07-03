@@ -30,19 +30,19 @@
                 "showDetailsButton":true,
                 "type":"disposition",
                 "numberOfVisits":1,
-                "displayOrder":2
+                "displayOrder":7
             },
             "admissionDetails":{  
                 "translationKey":"DASHBOARD_TITLE_ADMISSION_DETAILS_KEY",
                 "type":"admissionDetails",
-                "displayOrder":3,
+                "displayOrder":5,
                 "showDetailsButton":true
             },
              "treatmentsGeneral":{  
                 "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":4,
+                "displayOrder":3,
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
@@ -65,7 +65,7 @@
                 "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":5,
+                "displayOrder":2,
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
@@ -84,35 +84,11 @@
                     }
                 }
             },
-            "nutritionalValues":{  
-                "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
-                "type":"vitals",
-                "isObservation":true,
-                "displayOrder":6,
-                "dashboardConfig":{  
-                    "conceptNames":[  
-                        "Nutritional Values"
-                    ],
-                    "showDetailsButton":true,
-                    "scope":"latest"
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Nutritional Values"
-                    ],
-                    "numberOfVisits":5,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
-            
             "vitals":{  
                 "translationKey":"DASHBOARD_TITLE_VITALS_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":7,
+                "displayOrder":4,
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
@@ -131,86 +107,34 @@
                     }
                 }
             },
-            "diabetesScreeningForm":{  
-                "translationKey":"DASHBOARD_TITLE_DIABETES_SCREENING_KEY",
-                "type":"vitals",
-                "isObservation":true,
-                "displayOrder":8,
-                "dashboardConfig":{  
-                    "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Diabetes screening form"
-                    ],
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Diabetes screening form"
-                    ],
-                    "numberOfVisits":5,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
-            "diabetesFollowUpForm":{  
-                "translationKey":"DASHBOARD_TITLE_DIABETES_FOLLOWUP_KEY",
-                "type":"vitals",
-                "isObservation":true,
-                "displayOrder":9,
-                "dashboardConfig":{  
-                    "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Diabetes follow up form"
-                    ],
-                    "numberOfVisits":2
-                },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Diabetes follow up form"
-                    ],
-                    "numberOfVisits":5,
-                    "showDetailsButton":true,
-                    "pivotTable":{  
-
-                    }
-                }
-            },
-            "hypertensionForm":{  
-                "translationKey":"DASHBOARD_TITLE_HYPERTENSION_KEY",
+            "investigationFinding":{
+                "translationKey":"DASHBOARD_TITLE_INVESTIGATION_FINDINGS_KEY",
                 "type":"vitals",
                 "isObservation":true,
                 "displayOrder":10,
-                "dashboardConfig":{  
+                "dashboardConfig":{
                     "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Hypertension Form"
+                    "conceptNames":[
+                        "Investigation Report"
                     ],
                     "numberOfVisits":2
                 },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Hypertension Form"
+                "expandedViewConfig":{
+                    "conceptNames":[
+                        "Investigation Report"
                     ],
                     "numberOfVisits":5,
                     "showDetailsButton":true,
-                    "pivotTable":{  
+                    "pivotTable":{
 
                     }
                 }
-            },
-            "radiology":{  
-                "translationKey":"DASHBOARD_TITLE_RADIOLOGY_KEY",
-                "type":"radiology",
-                "showDetailsButton":true,
-                "displayOrder":11
             },
             "radiologyOrders":{  
                 "orderType":"Radiology Order",
                 "type":"ordersControl",
                 "translationKey":"DASHBOARD_TITLE_RADIOLOGY_ORDERS_KEY",
-                "displayOrder":12,
+                "displayOrder":6,
                 "dashboardConfig":{  
                     "conceptNames":[  
                         "Radiology Summary"
@@ -222,7 +146,7 @@
                 "orderType":"USG Order",
                 "type":"ordersControl",
                 "translationKey":"DASHBOARD_TITLE_USG_ORDERS_KEY",
-                "displayOrder":13,
+                "displayOrder":8,
                 "dashboardConfig":{  
                     "conceptNames":[  
                         "USG Report"
@@ -230,33 +154,11 @@
                     "numberOfVisits":4
                 }
             },
-            "labResults":{  
-                "translationKey":"DASHBOARD_TITLE_LAB_RESULTS_KEY",
-                "type":"labOrders",
-                "displayOrder":14,
-                "dashboardConfig":{  
-                    "title":null,
-                    "numberOfVisits":1,
-                    "showChart":false,
-                    "showTable":true,
-                    "showDetailsButton":false,
-                    "initialAccessionCount":0,
-                    "latestAccessionCount":1
-                },
-                "expandedViewConfig":{  
-                    "numberOfVisits":10
-                }
-            },
-            "programs":{  
-                "translationKey":"DASHBOARD_TITLE_PROGRAMS_KEY",
-                "type":"programs",
-                "displayOrder":15
-            },
             "FollowUpForm":{ 
                 "translationKey":"DASHBOARD_TITLE_FOLLOW_UP_FORM_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":16,
+                "displayOrder":9,
                 "dashboardConfig":{  
                     "showDetailsButton":true,
                     "conceptNames":[  
@@ -278,120 +180,121 @@
             "visits":{  
                 "translationKey":"DASHBOARD_TITLE_VISITS_KEY",
                 "type":"visits",
-                "displayOrder":18,
+                "displayOrder":11,
                 "dashboardConfig":{  
                     "title":null,
                     "maximumNoOfVisits":8,
                     "groupByVisits":true
                 }
+            }
+        }
+    },
+    "ncdDashboard": {
+        "translationKey": "NCD",
+        "displayType": "Full-Page",
+        "printing": {
+            "title": "",
+            "header": "",
+            "logo": ""
+        },
+        "sections": {
+            "programs":{
+                "translationKey":"DASHBOARD_TITLE_PROGRAMS_KEY",
+                "type":"programs",
+                "displayOrder":1
             },
-             "referInDetails":{  
-                "translationKey":"Refer In Details",
+            "hypertensionForm":{
+                "translationKey":"DASHBOARD_TITLE_HYPERTENSION_KEY",
                 "type":"vitals",
                 "isObservation":true,
-                "displayOrder":17,
-                "dashboardConfig":{  
+                "displayOrder":0,
+                "dashboardConfig":{
                     "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Refer In Details"
+                    "conceptNames":[
+                        "Hypertension Form"
                     ],
                     "numberOfVisits":2
                 },
-                "expandedViewConfig":{  
-                    "conceptNames":[  
-                        "Refer In Details"
+                "expandedViewConfig":{
+                    "conceptNames":[
+                        "Hypertension Form"
                     ],
                     "numberOfVisits":5,
                     "showDetailsButton":true,
-                    "pivotTable":{  
+                    "pivotTable":{
+
+                    }
+                }
+            },
+            "diabetesScreeningForm":{
+                "translationKey":"DASHBOARD_TITLE_DIABETES_SCREENING_KEY",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":2,
+                "dashboardConfig":{
+                    "showDetailsButton":true,
+                    "conceptNames":[
+                        "Diabetes screening form"
+                    ],
+                    "numberOfVisits":2
+                },
+                "expandedViewConfig":{
+                    "conceptNames":[
+                        "Diabetes screening form"
+                    ],
+                    "numberOfVisits":5,
+                    "showDetailsButton":true,
+                    "pivotTable":{
+
+                    }
+                }
+            },
+            "diabetesFollowUpForm":{
+                "translationKey":"DASHBOARD_TITLE_DIABETES_FOLLOWUP_KEY",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":3,
+                "dashboardConfig":{
+                    "showDetailsButton":true,
+                    "conceptNames":[
+                        "Diabetes follow up form"
+                    ],
+                    "numberOfVisits":2
+                },
+                "expandedViewConfig":{
+                    "conceptNames":[
+                        "Diabetes follow up form"
+                    ],
+                    "numberOfVisits":5,
+                    "showDetailsButton":true,
+                    "pivotTable":{
+
+                    }
+                }
+            },
+            "nutritionalValues":{
+                "translationKey":"DASHBOARD_TITLE_NUTRITIONAL_VALUES_KEY",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":4,
+                "dashboardConfig":{
+                    "conceptNames":[
+                        "Nutritional Values"
+                    ],
+                    "showDetailsButton":true,
+                    "scope":"latest"
+                },
+                "expandedViewConfig":{
+                    "conceptNames":[
+                        "Nutritional Values"
+                    ],
+                    "numberOfVisits":5,
+                    "showDetailsButton":true,
+                    "pivotTable":{
 
                     }
                 }
             }
-        }
-    },
-    "referralform": {
-        "translationKey": "Referral Form",
-        "displayType": "Full-Page",
-        "printing": {
-            "title": "ePIS - Ministry of Health, Bhutan",
-            "header": "",
-            "logo": "/bahmni_config/openelis/images/labLogo.jpg"
-        },
-        "sections": {
-            "referralSummary": {
-                "type": "custom",
-                "displayType": "Full-Page",
-                "displayOrder": 1,
-                "config": {
-                    "title": "Referral form doctor",
-                    "template": "<referral-summary></referral-summary>"
-                }
-            },
-            "referralHistoryAndExamination":{  
-                "type":"vitals",
-                "displayOrder":2,
-                "isObservation":true,
-                "displayType":"Full-Page",
-                "dashboardConfig":{  
-                    "showGroupDateTime":false,
-                    "numberOfVisits": 3,
-                    "conceptNames":[  
-                        "H&E, Chief Complaint",
-                        "Examination Notes",
-                        "H&E, Investigation Notes"
-                    ]
-                },
-                "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY"
-            },
-            "referraldiagnosis": {
-                "title": "Diagnosis",
-                "displayType": "Full-Page",
-                "displayOrder": 3,
-                "showRuledOutDiagnoses": false,
-                "type": "diagnosis",
-                "showCertainty": false,
-                "showOrder": true,
-                "showDetailsButton": true,
-                "numberOfVisits": 3
-            },
-            "referrallabResults": {
-                     "title": "Lab Results",
-                     "displayType": "Full-Page",
-                     "type": "labOrders",
-                     "displayOrder": 4,
-                     "dashboardConfig": {
-                     "title":null,
-                     "numberOfVisits":3,
-                     "showChart":false,
-                     "showTable":true,
-                     "showDetailsButton":false
-                }
-            },
-            "referraltreatments":{  
-                "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
-                "displayType": "Full-Page",
-                "type":"vitals",
-                "isObservation":true,
-                "displayOrder":5,
-                "dashboardConfig":{  
-                    "showDetailsButton":true,
-                    "conceptNames":[  
-                        "Consultation Note"
-                    ],
-                    "numberOfVisits":3
-                }
-            },
-            "referralSummaryFooter": {
-                "type": "custom",
-                "displayType": "Full-Page",
-                "displayOrder": 6,
-                "config": {
-                    "title": "",
-                    "template": "<referralsummary-footer></referralsummary-footer>"
-                }
-            }
-
         }
     },
     "eyeform": {
@@ -438,6 +341,90 @@
                     }
                 }
             }
+        }
+    },
+    "referralform": {
+        "translationKey": "Referral Form",
+        "displayType": "Full-Page",
+        "printing": {
+            "title": "ePIS - Ministry of Health, Bhutan",
+            "header": "",
+            "logo": "/bahmni_config/openelis/images/labLogo.jpg"
+        },
+        "sections": {
+            "referralSummary": {
+                "type": "custom",
+                "displayType": "Full-Page",
+                "displayOrder": 1,
+                "config": {
+                    "title": "Referral form doctor",
+                    "template": "<referral-summary></referral-summary>"
+                }
+            },
+            "referralHistoryAndExamination":{
+                "type":"vitals",
+                "displayOrder":2,
+                "isObservation":true,
+                "displayType":"Full-Page",
+                "dashboardConfig":{
+                    "showGroupDateTime":false,
+                    "numberOfVisits": 3,
+                    "conceptNames":[
+                        "H&E, Chief Complaint",
+                        "Examination Notes",
+                        "H&E, Investigation Notes"
+                    ]
+                },
+                "translationKey":"DASHBOARD_TITLE_HISTORY_AND_EXAMINATIONS_KEY"
+            },
+            "referraldiagnosis": {
+                "title": "Diagnosis",
+                "displayType": "Full-Page",
+                "displayOrder": 3,
+                "showRuledOutDiagnoses": false,
+                "type": "diagnosis",
+                "showCertainty": false,
+                "showOrder": true,
+                "showDetailsButton": true,
+                "numberOfVisits": 3
+            },
+            "referrallabResults": {
+                "title": "Lab Results",
+                "displayType": "Full-Page",
+                "type": "labOrders",
+                "displayOrder": 4,
+                "dashboardConfig": {
+                    "title":null,
+                    "numberOfVisits":3,
+                    "showChart":false,
+                    "showTable":true,
+                    "showDetailsButton":false
+                }
+            },
+            "referraltreatments":{
+                "translationKey":"DASHBOARD_TITLE_TREATMENTS_KEY",
+                "displayType": "Full-Page",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":5,
+                "dashboardConfig":{
+                    "showDetailsButton":true,
+                    "conceptNames":[
+                        "Consultation Note"
+                    ],
+                    "numberOfVisits":3
+                }
+            },
+            "referralSummaryFooter": {
+                "type": "custom",
+                "displayType": "Full-Page",
+                "displayOrder": 6,
+                "config": {
+                    "title": "",
+                    "template": "<referralsummary-footer></referralsummary-footer>"
+                }
+            }
+
         }
     },
     "patientSummaryTab": {
