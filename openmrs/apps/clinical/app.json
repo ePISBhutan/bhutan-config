@@ -257,6 +257,14 @@
           },
           "PF, Weight":{
             "required":true
+          },
+          "Systolic Data":{
+            "required":true,
+            "disableAddNotes":true
+          },
+          "Diastolic Data":{
+            "required":true,
+            "disableAddNotes":true
           }
         },
         "visitPage": {
