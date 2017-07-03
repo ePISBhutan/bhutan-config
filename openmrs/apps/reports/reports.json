@@ -241,5 +241,19 @@
             "showTotalColumn":true
 
          }
-     }
+     },
+  "usgMonthlyReport": {
+    "name": "USG Monthly Report",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/usgMonthlyReport.sql"
+    }
+  },
+  "radiologyMonthlyReport": {
+    "name": "Radiology Monthly Report",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/radiologyMonthlyReport.sql"
+    }
+  }
 }
