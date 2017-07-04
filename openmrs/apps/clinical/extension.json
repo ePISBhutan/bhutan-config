@@ -133,6 +133,19 @@
     "order": 6,
     "requiredPrivilege": "app:clinical"
   },
+  "bahmniClinicalPatientsSearchNcdPatients": {
+    "id": "bahmni.clinical.patients.search.pharmacyPatients",
+    "extensionPointId": "org.bahmni.patient.search",
+    "type": "config",
+    "extensionParams": {
+      "searchHandler": "emrapi.sqlSearch.NCDPatients",
+      "translationKey": "MODULE_LABEL_NCD_KEY",
+      "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
+    },
+    "label": "Active",
+    "order": 7,
+    "requiredPrivilege": "app:clinical"
+  },
 
     "bahmniClinicalPatientsSearchEmergencyPatients": {
     "id": "bahmni.clinical.patients.search.EmergencyPatients",
@@ -144,7 +157,7 @@
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "Active",
-    "order": 7,
+    "order": 8,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalPatientsSearchPharmacyPatients": {
@@ -156,7 +169,7 @@
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "Pharmacy",
-    "order": 8,
+    "order": 9,
     "requiredPrivilege": "app:clinical"
   },
 
@@ -169,7 +182,7 @@
       "forwardUrl": "#/default/patient/{{patientUuid}}/dashboard"
     },
     "label": "All",
-    "order": 9,
+    "order": 10,
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalConceptSetGroupObservationsHistory": {
