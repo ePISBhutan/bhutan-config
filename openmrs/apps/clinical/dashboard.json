@@ -448,5 +448,40 @@
                 }
             }
         }
+    },
+            "dentalform": {
+        "translationKey": "Dental Form",
+        "displayType": "Full-Page",
+        "printing": {
+            "title": "",
+            "header": "",
+            "logo": ""
+        },
+        "sections": {
+            "dentalForm":{  
+                "translationKey":"DASHBOARD_TITLE_DENTAL_FORM_KEY",
+                "type":"vitals",
+                "isObservation":true,
+                "displayType": "Full-Page",
+                "displayOrder":10,
+                "dashboardConfig":{  
+                    "showDetailsButton":true,
+                    "conceptNames":[  
+                        "Dental Form"
+                    ],
+                    "numberOfVisits":2
+                },
+                "expandedViewConfig":{  
+                    "conceptNames":[  
+                        "Dental Form"
+                    ],
+                    "numberOfVisits":5,
+                    "showDetailsButton":true,
+                    "pivotTable":{  
+
+                    }
+                }
+            }
+        }
     }
 }

@@ -276,8 +276,34 @@
           "Hypertension Form":{
             "hideAbnormalButton":true,
             "allowAddMore":true
-          }
-
+          },
+          "Dental - Chief Complaint":{
+               "required":true          
+            },
+            "Dental, Medical History":{
+              "required":true
+            },
+            "Dental Treatment Data":{
+              "allowAddMore":true,
+              "isTabular":true
+            },
+            "Assessment/Plan, Location of Treatment Done":{
+              "autocomplete":true,
+              "conciseText":true,
+              "disableAddNotes":true
+              },
+              "Assessment/Plan, Name of Treatment":{
+                "autocomplete":true,
+                "conciseText":true,
+                "disableAddNotes":true
+                },
+            "Dental, Follow Up Date":{
+              "disableAddNotes":true,
+              "allowFutureDates":true
+            },
+            "Dental Treatment Notes":{
+              "conciseText":true
+            }
         },
         "visitPage": {
             "observationDisplay": {
