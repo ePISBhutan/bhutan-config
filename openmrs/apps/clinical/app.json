@@ -237,6 +237,13 @@
             "IOP, OS":{
               "disableAddNotes":true
             },
+            "Eye Form, Purpose of Visit":{
+              "multiSelect":true,
+              "required":true
+              },
+          "defaults" : {
+            "Eye Form, Purpose of Visit":["New"]
+              },
           "IPD Nurse Notes Form":{
             "allowAddMore": true
           },
