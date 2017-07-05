@@ -40,7 +40,18 @@ LEFT JOIN
     /*Admission: The count of the admitted patients during that day.*/
     SELECT
       'IPD'               AS IPD,
-      count(v.patient_id) AS 'TodayAdmissionCount'
+      count(v.patient_id)+ (SELECT/* Adding the undo discharge cases to the admission count*/
+                               count(v.patient_id)
+                             FROM visit v
+                               JOIN person_name pn ON v.patient_id = pn.person_id
+                               JOIN encounter e ON e.visit_id = v.visit_id
+                               JOIN encounter_type et ON e.encounter_type = et.encounter_type_id
+                             WHERE
+                               cast(e.date_voided AS DATE) BETWEEN '2017-07-05' AND '2017-07-05'
+                               AND v.voided IS FALSE
+                               AND et.name IN ('DISCHARGE')
+                                AND e.void_reason = 'Undo Discharge'
+                                ) AS 'TodayAdmissionCount'
     FROM visit v
       JOIN person_name pn ON v.patient_id = pn.person_id
       JOIN encounter e ON e.visit_id = v.visit_id
@@ -91,7 +102,7 @@ LEFT JOIN
       cast(e.encounter_datetime AS DATE) BETWEEN '#startDate#' and '#endDate#'
       AND v.voided IS FALSE
       AND et.name IN ('DISCHARGE')
-      AND e.voided IS FALSE
+      AND (e.voided = FALSE OR e.void_reason = 'Undo Discharge')
   ) as TodayDischargeCount
   on PreviousAdmittedPatients.IPD=TodayDischargeCount.IPD
 
