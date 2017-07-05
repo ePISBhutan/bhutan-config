@@ -47,7 +47,7 @@ LEFT JOIN
                                JOIN encounter e ON e.visit_id = v.visit_id
                                JOIN encounter_type et ON e.encounter_type = et.encounter_type_id
                              WHERE
-                               cast(e.date_voided AS DATE) BETWEEN '2017-07-05' AND '2017-07-05'
+                               cast(e.date_voided AS DATE) BETWEEN '#startDate#' and '#endDate#'
                                AND v.voided IS FALSE
                                AND et.name IN ('DISCHARGE')
                                 AND e.void_reason = 'Undo Discharge'
