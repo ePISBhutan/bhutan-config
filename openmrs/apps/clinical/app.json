@@ -336,7 +336,8 @@
             "required":true
           },
           "MH, EDD":{
-            "required":true
+            "required":true,
+            "allowFutureDates":true
           },
           "MH, Date of 1st USG":{
             "required":true
