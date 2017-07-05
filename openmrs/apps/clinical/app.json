@@ -310,7 +310,106 @@
             },
             "Dental Treatment Notes":{
               "conciseText":true
-            }
+            },
+          "MH, Gravida":{
+            "required":true
+          },
+          "MH, Para":{
+            "required":true
+          },
+          "MH, Abortion":{
+            "required":true
+          },
+          "MH, Still Birth":{
+            "required":true
+          },
+          "MH, Preterm":{
+            "required":true
+          },
+          "MH, Alive":{
+            "required":true
+          },
+          "MH, Dead":{
+            "required":true
+          },
+          "MH, LMP":{
+            "required":true
+          },
+          "MH, EDD":{
+            "required":true
+          },
+          "MH, Date of 1st USG":{
+            "required":true
+          },
+          "MH, Gestational age at 1st USG":{
+            "required":true
+          },
+          "MH, Height":{
+            "required":true
+          },
+          "MH, Pallor":{
+            "required":true
+          },
+          "MH, Oedema":{
+            "required":true
+          },
+          "MH, Jaundice":{
+            "required":true
+          },
+          "MH, Systolic Data":{
+            "required":true
+          },
+          "MH, Diastolic Data":{
+            "required":true
+          },
+          "MH, Pulse":{
+            "required":true
+          },
+          "MH, Temperature":{
+            "required":true
+          },
+          "MH, Respiration":{
+            "required":true
+          },
+          "MH, Fundal height":{
+            "required":true
+          },
+          "MH, Presentation":{
+            "required":true
+          },
+          "MH, Position":{
+            "required":true
+          },
+          "MH, Fetel Heart Rate(FHR)":{
+            "required":true
+          },
+          "MH, Contraction":{
+            "required":true
+          },
+          "MH, Time of P.V":{
+            "required":true
+          },
+          "MH, Show":{
+            "required":true
+          },
+          "MH, Effacement":{
+            "required":true
+          },
+          "MH, Dilatation":{
+            "required":true
+          },
+          "MH, Membrance":{
+            "required":true
+          },
+          "MH, Station":{
+            "required":true
+          },
+          "MH, Problems during previous pregnancy":{
+            "multiSelect": true
+          },
+          "Maternity History Sheet":{
+            "hideAbnormalButton" : true
+          }
         },
         "visitPage": {
             "observationDisplay": {

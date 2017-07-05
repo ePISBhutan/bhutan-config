@@ -284,7 +284,7 @@
                         "Nutritional Values"
                     ],
                     "showDetailsButton":true,
-                    "scope":"latest"
+                    "numberOfVisits":2
                 },
                 "expandedViewConfig":{
                     "conceptNames":[
