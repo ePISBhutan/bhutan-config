@@ -12,16 +12,16 @@ Select
 from
   (
     /*Previous patients: Patient count - All the patients who are admitted till previous day of start date.*/
-    Select 'IPD' as IPD,count(v.patient_id) as 'PreviousDayAdmissionCount'
-    from visit v
-      join encounter e on  e.visit_id=v.visit_id
-      JOIN encounter_type et on e.encounter_type=et.encounter_type_id
+   Select 'IPD' as IPD,count(vOut.patient_id) as 'PreviousDayAdmissionCount'
+    from visit vOut
+      join encounter eOut on  eOut.visit_id=vOut.visit_id
+      JOIN encounter_type et on eOut.encounter_type=et.encounter_type_id
     where
-      cast(e.encounter_datetime  AS DATE) < '#startDate#'
-      and v.voided is FALSE
+      cast(eOut.encounter_datetime  AS DATE) < '#startDate#'
+      and vOut.voided is FALSE
       and et.name in ('ADMISSION')
-      and e.voided is FALSE
-      and v.patient_id not in(/*Ignoring the patients who were dischanged*/
+      and eOut.voided is FALSE
+      and vOut.patient_id not in(/*Ignoring the patients who were dischanged*/
         SELECT v.patient_id
         from visit v
           join encounter e on  e.visit_id=v.visit_id
@@ -31,6 +31,8 @@ from
           and v.voided is FALSE
           and et.name in ('DISCHARGE')
           and e.voided is FALSE
+          and v.patient_id=vOut.patient_id
+          and e.encounter_datetime > eOut.encounter_datetime
       )
   ) as PreviousAdmittedPatients
 
