@@ -410,6 +410,17 @@
           },
           "Maternity History Sheet":{
             "hideAbnormalButton" : true
+          },
+          "WHO Partograph":{
+            "hideAbnormalButton" : true
+          },
+          "Partograph, FHR Data":{
+            "allowAddMore":true,
+            "required":true
+          },
+          "Partograph, Contractions Data":{
+            "allowAddMore":true,
+            "required":true
           }
         },
         "visitPage": {
