@@ -421,6 +421,12 @@
           "Partograph, Contractions Data":{
             "allowAddMore":true,
             "required":true
+          },
+          "Injury, Date":{
+            "disableAddNotes": true
+          },
+          "Injury, Date & Time of examination":{
+            "disableAddNotes": true
           }
         },
         "visitPage": {
