@@ -503,10 +503,10 @@
           "IPPR, Mother Bleeding P.V.":{
             "required":true
           },
-          "IPPR, Systolic":{
+          "IPPR, Systolic Data":{
             "required":true
           },
-          "IPPR, Diastolic":{
+          "IPPR, Diastolic Data":{
             "required":true
           },
           "IPPR, Pulse":{
@@ -523,6 +523,15 @@
           },
           "IPPR, Skin Color":{
             "required":true
+          },
+          "IPPR, Baby":{
+            "allowAddMore":true
+          },
+          "IPPR, Post partum monitoring":{
+            "allowAddMore":true
+          },
+          "Immediate post partum record":{
+            "hideAbnormalButton" : true
           }
         },
         "visitPage": {
