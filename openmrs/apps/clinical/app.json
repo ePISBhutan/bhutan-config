@@ -492,6 +492,7 @@
             "required":true
           },
           "IPPR, Monitoring Time":{
+            "dropdown":true,
             "required":true
           },
           "IPPR, Mother HOF":{
