@@ -223,7 +223,7 @@
                                                 "Z96.1 Pseudophakia"
                                               ],
                       "conceptClassesToFilter": [],
-                      "visitTypesToFilter": ["EYE"],
+                      "visitTypesToFilter": [],
                       "applyDateRangeFor": "obsDate",
                       "ageGroupName":"Eye Age Group"
                   }
@@ -241,7 +241,8 @@
             "showTotalColumn":true
 
          }
-     },
+    },
+
   "usgMonthlyReport": {
     "name": "USG Monthly Report",
     "type": "MRSGeneric",
