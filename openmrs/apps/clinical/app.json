@@ -427,6 +427,102 @@
           },
           "Injury, Date & Time of examination":{
             "disableAddNotes": true
+          },
+          "IPPR, Onset":{
+            "required":true
+          },
+          "IPPR, Indication":{
+            "required":true
+          },
+          "IPPR, Details of baby":{
+            "allowAddMore":true
+          },
+          "IPPR, Apgar Score":{
+            "allowAddMore":true
+          },
+          "IPPR, Heart rate":{
+            "required":true
+          },
+          "IPPR, Respiration":{
+            "required":true
+          },
+          "IPPR, Muscle":{
+            "required":true
+          },
+          "IPPR, Colour":{
+            "required":true
+          },
+          "IPPR, Reflex":{
+            "required":true
+          },
+          "IPPR, Total apgar score":{
+            "required":true
+          },
+          "IPPR, Length":{
+            "required":true
+          },
+          "IPPR, Head circumference":{
+            "required":true
+          },
+          "IPPR, Placenta Date":{
+            "required":true
+          },
+          "IPPR, Placenta Time of delivery": {
+            "required": true
+          },
+          "IPPR, Placenta Way of delivery":{
+            "required":true
+          },
+          "IPPR, Placenta Status":{
+            "required":true
+          },
+          "IPPR, Incomplete Action":{
+            "required":true
+          },
+          "IPPR, Description of placenta":{
+            "required":true
+          },
+          "IPPR, Abnormalities specification":{
+            "required":true
+          },
+          "IPPR, Blood loss":{
+            "required":true
+          },
+          "IPPR, Condition of Perineum":{
+            "required":true
+          },
+          "IPPR, Monitoring Time":{
+            "required":true
+          },
+          "IPPR, Mother HOF":{
+            "required":true
+          },
+          "IPPR, Mother Uterus":{
+            "required":true
+          },
+          "IPPR, Mother Bleeding P.V.":{
+            "required":true
+          },
+          "IPPR, Systolic":{
+            "required":true
+          },
+          "IPPR, Diastolic":{
+            "required":true
+          },
+          "IPPR, Pulse":{
+            "required":true
+          },
+          "IPPR, Cord":{
+            "required":true
+          },
+          "IPPR, Urine":{
+            "required":true
+          },
+          "IPPR, Meconium":{
+            "required":true
+          },
+          "IPPR, Skin Color":{
+            "required":true
           }
         },
         "visitPage": {

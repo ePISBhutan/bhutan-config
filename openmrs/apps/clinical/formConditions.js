@@ -102,5 +102,57 @@ Bahmni.ConceptSet.FormConditions.rules = {
                 disable: ["DR,Other Term"]
             }
         }
+    },
+    'IPPR, Onset' : function (formName, formFieldValues) {
+        var onSet = formFieldValues['IPPR, Onset'];
+
+        if (onSet =="Induced") {
+            return {
+                enable: ["IPPR, Indication"]
+            }
+        } else {
+            return {
+                disable: ["IPPR, Indication"]
+            }
+        }
+    },
+    'IPPR, Breech' : function (formName, formFieldValues) {
+        var onSet = formFieldValues['IPPR, Breech'];
+
+        if (onSet =="Others") {
+            return {
+                enable: ["IPPR, Breech Others"]
+            }
+        } else {
+            return {
+                disable: ["IPPR, Breech Others"]
+            }
+        }
+    },
+    'IPPR, Placenta Status' : function (formName, formFieldValues) {
+        var onSet = formFieldValues['IPPR, Placenta Status'];
+
+        if (onSet =="Incomplete") {
+            return {
+                enable: ["IPPR, Incomplete Action"]
+            }
+        } else {
+            return {
+                disable: ["IPPR, Incomplete Action"]
+            }
+        }
+    },
+    'IPPR, Description of placenta' : function (formName, formFieldValues) {
+        var onSet = formFieldValues['IPPR, Description of placenta'];
+
+        if (onSet =="Abnormalities") {
+            return {
+                enable: ["IPPR, Abnormalities specification"]
+            }
+        } else {
+            return {
+                disable: ["IPPR, Abnormalities specification"]
+            }
+        }
     }
 };
