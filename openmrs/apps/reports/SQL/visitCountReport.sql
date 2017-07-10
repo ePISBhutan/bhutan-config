@@ -2,7 +2,16 @@ Select Visit,
   TotalPatient AS 'Count of patient'
 FROM
   (/*Getting the no of visit for all the visit type*/
-    Select CASE WHEN vt.name = 'IPD' THEN 2 ELSE 0 END AS VisitDisplayOrder,
+    Select CASE WHEN vt.name = 'OPD' THEN 0
+           WHEN vt.name = 'Dental' THEN 1
+           WHEN vt.name = 'NCD' THEN 2
+           WHEN vt.name = 'Eye' THEN 3
+           WHEN vt.name = 'ENT' THEN 4
+           WHEN vt.name = 'Lab' THEN 5
+           WHEN vt.name = 'Emergency' THEN 6
+           WHEN vt.name = 'IPD' THEN 9
+      ELSE 7
+           END AS VisitDisplayOrder,
       CASE WHEN vt.name ='OPD' THEN 'General OPD' ELSE vt.name END AS Visit,
       COUNT(v.patient_id) 'TotalPatient'
     from visit v
@@ -16,8 +25,8 @@ FROM
     UNION ALL
 
 /*Getting total of all the visit type except IPD*/
-    Select 1 AS VisitDisplayOrder,
-      'Total'AS Visit,
+    Select 8 AS VisitDisplayOrder,
+      'Total OPD'AS Visit,
       COUNT(v.patient_id) 'TotalPatient'
     from visit v
       JOIN visit_type vt
