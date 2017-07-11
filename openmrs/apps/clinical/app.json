@@ -304,11 +304,14 @@
                 "conciseText":true,
                 "disableAddNotes":true
                 },
-            "Dental, Follow Up Date":{
+          "Assessment/Plan, Investigation":{
+              "dropdown":true               
+            },
+          "Dental, Follow Up Date":{
               "disableAddNotes":true,
               "allowFutureDates":true
             },
-            "Dental Treatment Notes":{
+          "Dental Treatment Notes":{
               "conciseText":true
             },
           "MH, Gravida":{
