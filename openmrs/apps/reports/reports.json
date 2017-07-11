@@ -225,7 +225,8 @@
                       "conceptClassesToFilter": [],
                       "visitTypesToFilter": [],
                       "applyDateRangeFor": "obsDate",
-                      "ageGroupName":"Eye Age Group"
+                      "ageGroupName":"Eye Age Group",
+                      "forDataAnalysis": true
                   }
              },
              "rowGroups": [
@@ -235,7 +236,7 @@
                  "Eye Age Group"
              ],
              "distinctGroups": [
-                 "Patient Identifier"
+                  "Obs Id"
              ],
               
             "showTotalColumn":true
@@ -255,6 +256,36 @@
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/radiologyMonthlyReport.sql"
+    }
+  },
+  "dentalReport": {
+  "name": "Treatment report for Dental",
+  "type": "aggregation",
+  "config": {
+    "report":{
+      "type": "observations",
+      "config": {
+        "visitAttributes": ["Visit Status", "Admission Status"],
+        "showVisitInfo": true,
+        "conceptNamesToFilter": ["Assessment/Plan, Name of Treatment"],
+        "conceptValuesToFilter":[],
+        "conceptClassesToFilter": [],
+        "visitTypesToFilter": [],
+        "applyDateRangeFor": "obsDate",
+        "ageGroupName":"Eye Age Group",
+        "forDataAnalysis": true
+      }
+    },
+    "rowGroups": [
+      "Value"
+    ],
+    "columnGroups": [
+      "Eye Age Group","Gender"
+    ],
+    "distinctGroups": [
+      "Obs Id"
+    ],
+    "showTotalRow":true
     }
   }
 }
