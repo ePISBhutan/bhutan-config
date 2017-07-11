@@ -296,7 +296,32 @@
 
                     }
                 }
+            },
+
+         "nCDLabReport":{
+                "translationKey":"DASHBOARD_TITLE_NCD_LAB_REPORT_KEY",
+                "type":"vitals",
+                "isObservation":true,
+                "displayOrder":5,
+                "dashboardConfig":{
+                    "conceptNames":[
+                        "NCD lab report form"
+                    ],
+                    "showDetailsButton":true,
+                    "numberOfVisits":2
+                },
+                "expandedViewConfig":{
+                    "conceptNames":[
+                        "NCD lab report form"
+                    ],
+                    "numberOfVisits":5,
+                    "showDetailsButton":true,
+                    "pivotTable":{
+
+                    }
+                }
             }
+
         }
     },
     "eyeform": {
