@@ -512,7 +512,6 @@
     "injuryReport": {
         "translationKey": "Injury Report",
         "displayType": "Full-Page",
-        "displayByDefault":true,
         "printing": {
             "title": "ePIS - Ministry of Health, Bhutan",
             "header": "",
