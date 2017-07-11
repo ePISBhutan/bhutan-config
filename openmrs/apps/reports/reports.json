@@ -112,37 +112,13 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/nbAdmissionCount.sql"
     }
   },
-
-    "Delivery_Count": {
-       "name": "No of Delivery",
-       "type": "aggregation",
-       "config": {
-                    "report":{
-                    "type": "observations", 
-                    "config": {
-        "patientAttributes": ["caste","class","education","occupation","primaryContact"],
-        "patientAddresses": ["address3","city_village"],
-        "visitAttributes": ["Visit Status","Admission Status"],
-        "showVisitInfo": true,
-        "showProvider": true,
-        "conceptNamesToFilter": ["DR,Sex"],
-        "conceptNameDisplayFormat": "shortNamePreferred",
-        "locationTagsToFilter": [],
-        "programsToFilter": [],
-        "applyDateRangeFor": "obsDate",
-        "visitTypesToFilter": []
+  "noOfDeliveries": {
+    "name": "Number of deliveries",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/noOfDeliveries.sql"
     }
-},
-"rowGroups":["Value"],
-           
-           "distinctGroups": [
-               "Patient Identifier"
-           ],
-            "showTotalRow":false,
-            "showTotalColumn":false
-       }
-
- },
+  },
   "dailyCensusReport": {
     "name": "Daily Census Report",
     "type": "MRSGeneric",
