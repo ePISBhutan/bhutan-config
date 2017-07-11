@@ -332,4 +332,54 @@ angular.module('bahmni.common.displaycontrol.custom')
                     controller : controller,
                     template: '<ng-include src="contentUrl"/>'
                 }
+            }]).directive('injuryreport', ['$q','observationsService','appService', 'spinner','$sce', function ($q,observationsService,appService, spinner, $sce)
+            {
+                var link = function ($scope)
+                {
+                    var vehicleAssaultedBy = ["Injury, Vehicle Accident/ Assaulted By"];
+                    var injuryReason =["Injury, Reason"];
+                    var injuryDate = ["Injury, Date"];
+                    var injuryInjuries = ["Injury, Injuries"];
+                    var dateTimeOfExamination = ["Injury, Date & Time of examination"];
+                    var placeOfExamination = ["Injury, Place of Examination"];
+                    var natureOfInjury = ["Injury, Nature of Injury"];
+
+
+                    spinner.forPromise(observationsService.fetch($scope.patient.uuid, vehicleAssaultedBy, undefined, 1, undefined, undefined).then(function (response) {
+                        $scope.obsVehicleAssaultedBy = response.data[0];
+                    }));
+                    spinner.forPromise(observationsService.fetch($scope.patient.uuid, injuryReason, undefined, 1, undefined, undefined).then(function (response) {
+                        $scope.obsInjuryReason = response.data[0];
+                    }));
+                    spinner.forPromise(observationsService.fetch($scope.patient.uuid, injuryDate, undefined, 1, undefined, undefined).then(function (response) {
+                        $scope.obsInjuryDate = response.data[0];
+                    }));
+                    spinner.forPromise(observationsService.fetch($scope.patient.uuid, injuryInjuries, undefined, 1, undefined, undefined).then(function (response) {
+                        $scope.obsInjuryInjuries = response.data[0];
+                    }));
+                    spinner.forPromise(observationsService.fetch($scope.patient.uuid, dateTimeOfExamination, undefined, 1, undefined, undefined).then(function (response) {
+                        $scope.obsDateTimeOfExamination = response.data[0];
+                    }));
+                    spinner.forPromise(observationsService.fetch($scope.patient.uuid, placeOfExamination, undefined, 1, undefined, undefined).then(function (response) {
+                        $scope.obsPlaceOfExamination = response.data[0];
+                    }));
+                    spinner.forPromise(observationsService.fetch($scope.patient.uuid, natureOfInjury, undefined, 1, undefined, undefined).then(function (response) {
+                        $scope.obsNatureOfInjury = response.data[0];
+                    }));
+
+                    $scope.contentUrl = appService.configBaseUrl() + "/customDisplayControl/views/injuryReport.html";
+                    $scope.curDate=new Date();
+
+                };
+                var controller = function($scope){
+                    $scope.htmlLabel = function(label){
+                        return $sce.trustAsHtml(label)
+                    }
+                }
+                return {
+                    restrict: 'E',
+                    link: link,
+                    controller : controller,
+                    template: '<ng-include src="contentUrl"/>'
+                }
             }]);

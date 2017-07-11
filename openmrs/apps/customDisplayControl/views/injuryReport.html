@@ -1,0 +1,53 @@
+<html>
+<head>
+    <link rel="stylesheet" href="/bahmni_config/openmrs/apps/customDisplayControl/css/print/custom-printref.css" media="print"/>
+</head>
+<body>
+<div>
+    <br>
+    <span class="header-font" style="padding-left: 300px;text-align:center;">
+        <strong><u>INJURY REPORT</u></strong>
+    </span>
+    <br><br><br>
+    <span class="increased-font" style="padding-left: 500px;">
+			<strong>Date : </strong>{{curDate|date : "dd-MMM-yyyy"}}
+		</span>
+    <br><br><br>
+
+    <span class="increased-font">
+			<span  ng-show="patient.gender=='F'||patient.gender=='O'"><strong>The undersigned has examined Mrs./Miss : </strong>{{patient.name}}</span>
+			<span  ng-show="patient.gender=='M'"><strong>The undersigned has examined Mr : </strong>{{patient.name}}</span>
+		</span>
+    <br><br>
+
+    <span class="increased-font">
+			<strong>who has met with a vehicle accident/was assaulted by </strong> {{obsVehicleAssaultedBy.valueAsString}}
+		</span>
+    <br><br>
+    <span class="increased-font">
+        <strong>at about  </strong> {{obsInjuryReason.valueAsString}} <strong>  on  </strong> {{obsInjuryDate.valueAsString}} <strong> and found the following injuries:-</strong>
+		</span>
+    <br><br>
+    <span class="increased-font">
+			{{obsInjuryInjuries.valueAsString}}
+		</span>
+    <br><br>
+    <span class="increased-font">
+			<strong>Date & Time of Examination : </strong> {{obsDateTimeOfExamination.valueAsString}}
+		</span>
+    <br><br>
+    <span class="increased-font">
+			<strong>Place of Examination : </strong> {{obsPlaceOfExamination.valueAsString}}
+		</span>
+    <br><br>
+    <span class="increased-font">
+			<strong>Nature of Injury : </strong> {{obsNatureOfInjury.valueAsString}}
+		</span>
+    <br><br><br><br><br><br>
+    <span class="increased-font" style="padding-left: 400px;">
+        <strong>DZONKHAG MEDICAL OFFICER</strong>
+		</span>
+
+</div>
+</body>
+</html>
