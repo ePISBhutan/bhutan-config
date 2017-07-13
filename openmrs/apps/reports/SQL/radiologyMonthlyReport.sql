@@ -130,6 +130,8 @@ FROM (
        where voided is FALSE
              and order_type_id in (Select order_type_id from order_type where name ='Radiology Order')
              and date(date_created) BETWEEN '#startDate#' and '#endDate#'
+             and order_id not in (Select previous_order_id from orders where order_action='DISCONTINUE' )
+             and order_action='NEW'
        GROUP BY DATE(date_created)
        ORDER BY EXTRACT(DAY FROM date_created)
      ) OrdersCount

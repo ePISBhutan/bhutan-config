@@ -1,4 +1,4 @@
-Select Days,
+Select Days,/*Pivoting the table*/
   Sum(C1) AS '1',
   Sum(C2) AS '2',
   Sum(C3) AS '3',
@@ -30,7 +30,7 @@ Select Days,
   Sum(C29)AS '29',
   Sum(C30)AS '30',
   Sum(C31)AS '31'
-FROM (
+FROM (/*Count of orders based on the dates*/
   SELECT
     'No pts' AS 'Days',
     CASE WHEN EXTRACT(DAY FROM date_created) = 1
@@ -127,9 +127,11 @@ FROM (
       THEN  count(DISTINCT patient_id)
     ELSE 0 END       AS 'C31'
   FROM orders
-    where voided is FALSE
-    and order_type_id in (Select order_type_id from order_type where name ='USG Order')
-    and date(date_created) BETWEEN '#startDate#' and '#endDate#'
+  where voided is FALSE
+        and order_type_id in (Select order_type_id from order_type where name ='USG Order')
+        and date(date_created) BETWEEN '#startDate#' and '#endDate#'
+  and order_id not in (Select previous_order_id from orders where order_action='DISCONTINUE' )
+  and order_action='NEW'
   GROUP BY DATE(date_created)
   ORDER BY EXTRACT(DAY FROM date_created)
 ) OrdersCount
