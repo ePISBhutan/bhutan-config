@@ -16,7 +16,8 @@
           "multiSelect": true
         },
         "Radiology Size of the film":{
-          "required":true
+          "required":true,
+          "disableAddNotes": true
         }
       },
       "sections": {
