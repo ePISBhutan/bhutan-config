@@ -219,7 +219,6 @@
 
          }
     },
-
   "usgMonthlyReport": {
     "name": "USG Monthly Report",
     "type": "MRSGeneric",
@@ -232,6 +231,29 @@
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/radiologyMonthlyReport.sql"
+    }
+  },
+  "xrayMonthlyCaseFilmExposedReport": {
+    "name": "X-ray Monthly Cases And Film Exposed Report",
+    "type": "concatenated",
+    "config": {
+      "reports": [
+        {
+          "name": "X-Ray Order Count Report",
+          "type": "MRSGeneric",
+          "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/xrayOrderCount.sql"
+          }
+        },
+        {
+          "name": "X-Ray Film Exposed Report",
+          "type": "MRSGeneric",
+          "config": {
+            "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/xrayFilmCount.sql"
+          }
+        }
+
+      ]
     }
   },
   "dentalReport": {
