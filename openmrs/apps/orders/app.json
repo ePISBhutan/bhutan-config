@@ -14,6 +14,9 @@
         },
         "Coded3": {
           "multiSelect": true
+        },
+        "Radiology Size of the film":{
+          "required":true
         }
       },
       "sections": {
