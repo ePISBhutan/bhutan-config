@@ -5,30 +5,30 @@ FROM (
   /*Radiology order count based on the type*/
   SELECT
     CASE WHEN cn.name = 'Chest'
-      THEN '1'
+      THEN 1
     WHEN cn.name = 'Upper Extremeties'
-      THEN '2'
+      THEN 2
     WHEN cn.name = 'Lower Extremeties'
-      THEN '3'
+      THEN 3
     WHEN cn.name = 'Abdomen'
-      THEN '4'
+      THEN 4
     WHEN cn.name = 'Spine'
-      THEN '5'
+      THEN 5
     WHEN cn.name = 'PNS'
-      THEN '6'
+      THEN 6
     WHEN cn.name = 'Skull'
-      THEN '7'
+      THEN 7
     WHEN cn.name = 'Pelvis'
-      THEN '8'
+      THEN 8
     WHEN cn.name = 'KUB'
-      THEN '9'
+      THEN 9
     WHEN cn.name = 'Neck'
-      THEN '10'
+      THEN 10
     WHEN cn.name = 'Facial Bone'
-      THEN '11'
+      THEN 11
     WHEN cn.name = 'Hip Joints'
-      THEN '12'
-    ELSE '13'
+      THEN 12
+    ELSE 13
     END
                      AS 'Ordering',
     CASE WHEN cn.name = 'Chest'
@@ -63,7 +63,7 @@ FROM (
 
   /*Total radiology orders*/
   SELECT
-    '14'            AS 'Ordering',
+    14            AS 'Ordering',
     'Total cases'   AS 'Parts to be done',
     count(order_id) AS 'No of cases'
   FROM
