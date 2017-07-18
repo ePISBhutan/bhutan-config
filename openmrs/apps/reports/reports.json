@@ -283,7 +283,8 @@
     "distinctGroups": [
       "Obs Id"
     ],
-    "showTotalRow":true
+    "showTotalRow":true,
+    "showTotalColumn":true
     }
   }
 }
