@@ -405,6 +405,36 @@
         }
     }
 },
+    "whoPartographs": {
+        "translationKey": "WHO Partographs",
+        "maxRecentlyViewedPatients": 10,
+        "sections": {
+            "fetalHeartRate": {
+                "type": "observationGraph",
+                "title": "Fetal Heart Rate",
+                "config": {
+                    "yAxisConcepts": [
+                        "Partograph, Fetal Heart rate"
+                    ],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 20
+                },
+                "displayOrder": 1
+            },
+            "BP": {
+                "type": "observationGraph",
+                "title": "Contractions per 10 mins",
+                "config": {
+                    "yAxisConcepts": [
+                        "Partograph, Contractions per 10 mins"
+                    ],
+                    "xAxisConcept": "observationDateTime",
+                    "numberOfVisits": 10
+                },
+                "displayOrder": 2
+            }
+        }
+    },
     "referralform": {
         "translationKey": "Referral Form",
         "displayType": "Full-Page",
