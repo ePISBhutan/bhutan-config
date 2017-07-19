@@ -66,7 +66,8 @@
                 "type":"vitals",
                 "isObservation":true,
                 "displayOrder":2,
-                "dashboardConfig":{  
+                "dashboardConfig":{
+                    "showTimeForObsGroup": true,
                     "showDetailsButton":true,
                     "conceptNames":[  
                         "History and Examination"
@@ -90,6 +91,7 @@
                 "isObservation":true,
                 "displayOrder":4,
                 "dashboardConfig":{  
+                    "showTimeForObsGroup": true,
                     "showDetailsButton":true,
                     "conceptNames":[  
                         "vitals"
@@ -102,6 +104,7 @@
                     ],
                     "numberOfVisits":5,
                     "showDetailsButton":true,
+                    "showTimeForObsGroup": true,
                     "pivotTable":{  
 
                     }
