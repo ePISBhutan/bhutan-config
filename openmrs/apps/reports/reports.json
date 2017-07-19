@@ -154,8 +154,13 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/nCDReport.sql"
     }
 },
-  "eyeReport": {
-         "name": "Morbidity report for Eye",
+"eyeMorbidityReport": {
+    "name": "Morbidity Report for EYE",
+    "type": "concatenated",
+    "config": {
+        "reports": [
+            {
+         "name": "Eye Morbidity Report",
          "type": "aggregation",
          "config": {
              "report":{
@@ -219,6 +224,47 @@
 
          }
     },
+          {
+         "name": "Checkup for medical certificate",
+         "type": "aggregation",
+         "config": {
+             "report":{
+                 "type": "observations",
+                  "config": {
+                      "visitAttributes": ["Visit Status", "Admission Status"],
+                      "showVisitInfo": true,
+                      "conceptNamesToFilter": ["Eye Form, Purpose of Visit"],
+                      "conceptValuesToFilter":["Medical certificate"],
+                      "visitTypesToFilter": [],
+                      "applyDateRangeFor": "obsDate",
+                      "ageGroupName":"Eye Age Group"
+                  }
+             },
+             "rowGroups": [
+                 "Value"
+             ],
+              "columnGroups": [
+                 "Eye Age Group"
+             ],
+             "distinctGroups": [
+                 "Obs Id"
+             ],
+              
+            "showTotalColumn":true
+
+         }
+     },
+          {
+    "name": "Other Eye Related Reports",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/eyeMorbidityOther.sql"
+    }
+  }
+
+        ]
+    }
+},
   "usgMonthlyReport": {
     "name": "USG Monthly Report",
     "type": "MRSGeneric",
