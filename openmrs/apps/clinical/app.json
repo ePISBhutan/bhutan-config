@@ -241,6 +241,9 @@
               "multiSelect":true,
               "required":true
               },
+              "Eye, Admitted/Referred Out":{
+              "multiSelect":true
+              },
           "defaults" : {
             "Eye Form, Purpose of Visit":["New"]
               },
@@ -305,7 +308,7 @@
                 "disableAddNotes":true
                 },
           "Assessment/Plan, Investigation":{
-              "dropdown":true               
+              "multiSelect":true
             },
           "Dental, Follow Up Date":{
               "disableAddNotes":true,
