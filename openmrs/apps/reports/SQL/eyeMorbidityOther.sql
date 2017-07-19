@@ -3,9 +3,9 @@ select
 `Purpose of Visit`,
 `Numberofpatients`
 from (
-Select
+select                                   /* New and Followup Patients */
  1 as ordering,
-cn2.name as 'Purpose of Visit',
+cn2.name as 'Purpose of Visit',                   
 case when cn2.name='Followup' then count(obs.person_id) + 
 				(
 					Select count(person_id) from obs o
@@ -27,7 +27,7 @@ Group by obs.value_coded
 Union all
 
 
-Select 2 as ordering,
+Select 2 as ordering,                  /* Total cases examined in OPD */
 'Total Cases Examined in OPD' as 'Purpose of Visit', sum(Numberofpatients) as 'Numberofpatients' from(
 select cn2.name as 'Purpose of Visit',
 case when cn2.name='Followup' then count(obs.person_id) + 
@@ -49,7 +49,7 @@ Group by obs.value_coded) EyeCasesInOPD
 
 Union all
 
-Select 3 as ordering,
+Select 3 as ordering,               /* No. of Admitted and Referred Out Patients */
 cn2.name as 'Admitted/Referred Out', count(distinct obs_id) as 'No. of Patients'
 from obs
 join concept_name cn on obs.concept_id=cn.concept_id
@@ -62,7 +62,7 @@ group by obs.value_coded
 
 Union all
 
-Select 4 as ordering,
+Select 4 as ordering,             /* Total no. of Minor Surgeries */
 'Total no. of Minor Surgeries' as 'Purpose of Visit',
 count(1) as 'Total no. of Minor Surgeries'
 from obs
@@ -73,7 +73,7 @@ AND date(obs.obs_datetime) BETWEEN ('#startDate#') and ('#endDate#')
 
 Union all
 
-select 5 as ordering,
+select 5 as ordering,            /* Total no. of all disease patients */
 'Total number of all disease patients' as 'Purpose of Visit',
     COUNT(1) AS 'Total number of all disease patients'
 from
