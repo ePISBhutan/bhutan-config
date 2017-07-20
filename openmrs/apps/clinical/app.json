@@ -80,6 +80,7 @@
         "visitTypeForRetrospectiveEntries": "OPD",
         "maxConceptSetLevels": 3,
         "allowOnlyCodedDiagnosis": false,
+        "hideConditions" : true,
         "conceptSetUI": {
             "Cross referral": {
                 "autocomplete":true,
