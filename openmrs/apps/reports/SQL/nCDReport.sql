@@ -176,58 +176,35 @@ on TotalNoOfPatVisitedNcd.Department=DiabetesFollowUpCountGenderWise.Department
 
 left Join
 
-(                          /*Total number of Hypertension and Diabetes follow up patients*/
-	Select 'NCD' as 'Department',
-	ifnull(HTNPatCount.Male,0)+ifnull(DiaPatCount.Male,0) +
-	ifnull(HTNPatCount.Female,0)+ifnull(DiaPatCount.Female,0) as 'TotalFollowUpForHtnDia' from 
-	(
-					Select Program,
-					Sum(male) as 'Male',
-					Sum(female) as 'Female' from 
-					(
-											select 'NCD' as 'Program',
-											case when person.gender='M' then count(1)  end as 'Male',
-											case when person.gender='F' then count(1)  end as 'Female'
-											from program
-												join patient_program ON patient_program.program_id = program.program_id
-												join episode_patient_program ON episode_patient_program.patient_program_id = patient_program.patient_program_id
-												join episode_encounter ON episode_encounter.episode_id = episode_patient_program.episode_id
-												join obs ON obs.encounter_id = episode_encounter.encounter_id
-												join concept_name ON concept_name.concept_id = obs.concept_id 
-												join person ON person.person_id = obs.person_id
-											where concept_name.name = 'Hypertension Form' 
-												AND concept_name.concept_name_type='FULLY_SPECIFIED'
-												AND date(obs.obs_datetime) BETWEEN date('#startDate#') AND date('#endDate#')
-												AND patient_program.voided = 0 
-												AND person.gender IN ('M','F')
-											group by person.gender
-					)as HypertensionFollowUpCountGenderWise
-					group by HypertensionFollowUpCountGenderWise.Program
-	) as HTNPatCount
-	JOIN
-	(
-				Select Program,
-				Sum(male) as 'Male',
-				Sum(female) as 'Female' from 
-				(
-										select 'NCD' as 'Program',
-										case when person.gender='M' then count(1)  end as 'Male',
-										case when person.gender='F' then count(1)  end as 'Female'
-										from program
-											join patient_program ON patient_program.program_id = program.program_id
-											join episode_patient_program ON episode_patient_program.patient_program_id = patient_program.patient_program_id
-											join episode_encounter ON episode_encounter.episode_id = episode_patient_program.episode_id
-											join obs ON obs.encounter_id = episode_encounter.encounter_id
-											join concept_name ON concept_name.concept_id = obs.concept_id 
-											join person ON person.person_id = obs.person_id
-										where concept_name.name = 'Diabetes follow up form' 
-											AND concept_name.concept_name_type='FULLY_SPECIFIED'
-											AND date(obs.obs_datetime) BETWEEN date('#startDate#') AND date('#endDate#')
-											AND patient_program.voided = 0 
-											AND person.gender IN ('M','F')
-										group by person.gender
-				)as DiabetesFollowUpCountGenderWise
-				group by DiabetesFollowUpCountGenderWise.Program
-	) as DiaPatCount on HTNPatCount.Program=DiaPatCount.Program
+(    /*Total no. of  Hypertension and Diabetes followup patients*/
+    Select 'NCD' as 'Department',
+       count(1) as 'TotalFollowUpForHtnDia'
+from program
+  join patient_program ON patient_program.program_id = program.program_id
+  join episode_patient_program ON episode_patient_program.patient_program_id = patient_program.patient_program_id
+  join episode_encounter ON episode_encounter.episode_id = episode_patient_program.episode_id
+  join obs ON obs.encounter_id = episode_encounter.encounter_id
+  join concept_name ON concept_name.concept_id = obs.concept_id
+  join person ON person.person_id = obs.person_id
+where concept_name.name = 'Hypertension Form'
+      AND concept_name.concept_name_type='FULLY_SPECIFIED'
+      AND date(obs.obs_datetime) BETWEEN date('#startDate#') AND date('#endDate#')
+      AND patient_program.voided = 0
+      AND person.gender IN ('M','F')
+      AND person.person_id IN (
+                                select patient_id
+                                from program
+                                  join patient_program ON patient_program.program_id = program.program_id
+                                  join episode_patient_program ON episode_patient_program.patient_program_id = patient_program.patient_program_id
+                                  join episode_encounter ON episode_encounter.episode_id = episode_patient_program.episode_id
+                                  join obs ON obs.encounter_id = episode_encounter.encounter_id
+                                  join concept_name ON concept_name.concept_id = obs.concept_id
+                                  join person ON person.person_id = obs.person_id
+                                where concept_name.name = 'Diabetes follow up form'
+                                      AND concept_name.concept_name_type='FULLY_SPECIFIED'
+                                      AND date(obs.obs_datetime) BETWEEN date('#startDate#') AND date('#endDate#')
+                                      AND patient_program.voided = 0
+                                      AND person.gender IN ('M','F')
+                              )
 ) as TotalFollowUpForHtnDia
 on TotalNoOfPatVisitedNcd.Department=TotalFollowUpForHtnDia.Department;
