@@ -373,10 +373,10 @@
           "MH, Pulse":{
             "required":true
           },
-          "MH, Temperature":{
+          "MH, Temperature Data":{
             "required":true
           },
-          "MH, Respiration":{
+          "MH, Respiration Data":{
             "required":true
           },
           "MH, Fundal height":{
