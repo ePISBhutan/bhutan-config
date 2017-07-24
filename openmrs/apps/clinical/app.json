@@ -543,6 +543,9 @@
           },
           "Diabetes, Pulse Data":{
             "required":true
+          },
+          "Surgery Form":{
+            "allowAddMore":true
           }
         },
         "visitPage": {
