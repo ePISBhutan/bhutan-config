@@ -540,6 +540,12 @@
           },
           "Immediate post partum record":{
             "hideAbnormalButton" : true
+          },
+          "Hypertension Form, Pulse Data":{
+            "required":true
+          },
+          "Diabetes, Pulse Data":{
+            "required":true
           }
         },
         "visitPage": {
