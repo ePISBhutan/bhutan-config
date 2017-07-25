@@ -72,7 +72,7 @@ LEFT JOIN
     /*Refer In: Total number of refer in patients on that day.*/
     SELECT
       'IPD'               AS IPD,
-      count(DISTINCT v.patient_id) AS 'TodayReferInCount'
+      count(DISTINCT o.obs_id) AS 'TodayReferInCount'
     FROM visit v
       JOIN person_name pn ON v.patient_id = pn.person_id
       JOIN encounter e ON e.visit_id = v.visit_id
@@ -114,7 +114,7 @@ LEFT JOIN
     /*Refer out: Total number of refer out patients on that day.*/
     SELECT
       'IPD'                        AS IPD,
-      count(DISTINCT v.patient_id) AS 'TodayReferOutCount'
+      count(DISTINCT o.obs_id) AS 'TodayReferOutCount'
     FROM visit v
       JOIN person_name pn ON v.patient_id = pn.person_id
       JOIN encounter e ON e.visit_id = v.visit_id
