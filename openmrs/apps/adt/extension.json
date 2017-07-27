@@ -101,6 +101,19 @@
         "order": 1,
         "requiredPrivilege": "app:adt"
     },
+    "bahmniAdtPatientsSearchPatientsToObservation":{
+        "id": "bahmni.adt.patients.search.patientsToObservation",
+        "extensionPointId": "org.bahmni.patient.search",
+        "type": "config",
+        "extensionParams": {
+            "searchHandler": "emrapi.sqlSearch.patientsToObservation",
+            "translationKey": "MODULE_LABEL_TO_OBSERVATION_KEY",
+            "forwardUrl":"#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit"
+        },
+        "label": "Under Observation",
+        "order": 2,
+        "requiredPrivilege": "app:adt"
+    },
     "bahmniAdtPatientsSearchPatientsAdmitted":{
         "id": "bahmni.adt.patients.search.patientsAdmitted",
         "extensionPointId": "org.bahmni.patient.search",
@@ -111,10 +124,10 @@
             "forwardUrl" : "#/patient/{{patientUuid}}/visit/{{visitUuid}}/transfer"
         },
         "label": "Admitted",
-        "order": 2,
+        "order": 3,
         "requiredPrivilege": "app:adt"
     },
-     "bahmniAdtPatientsSearchPatientsToDischarge":{
+    "bahmniAdtPatientsSearchPatientsToDischarge":{
         "id": "bahmni.adt.patients.search.patientsToDischarge",
         "extensionPointId": "org.bahmni.patient.search",
         "type": "config",
@@ -124,10 +137,9 @@
             "forwardUrl" : "#/patient/{{patientUuid}}/visit/{{visitUuid}}/discharge"
         },
         "label": "To Discharge",
-        "order": 3,
+        "order": 4,
         "requiredPrivilege": "app:adt"
     },
-
     "bahmniAdtPatientsSearchAllPatients":{
         "id": "bahmni.adt.patients.search.allPatients",
         "extensionPointId": "org.bahmni.patient.search",
@@ -137,7 +149,7 @@
             "forwardUrl" : "#/patient/{{patientUuid}}/visit/{{visitUuid}}/admit"
         },
         "label": "All",
-        "order": 4,
+        "order": 5,
         "requiredPrivilege": "app:adt"
     }
 }
