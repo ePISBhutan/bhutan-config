@@ -541,6 +541,12 @@
           "Diabetes, Pulse Data":{
             "required":true
           },
+          "SF, Date of surgery":{
+            "required":true
+          },
+          "SF, Procedure name":{
+            "required":true
+          },
           "Surgery Form":{
             "allowAddMore":true
           }
