@@ -147,6 +147,13 @@
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/ipdBedOccupancy.sql"
     }
 },
+"indoorActivityReport": {
+  "name": "Indoor Activity Report",
+  "type": "MRSGeneric",
+  "config": {
+    "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/indoorActivityReport.sql"
+  }
+},
 "EnrolledNCDPatients": {
     "name": "NCD Report",
     "type": "MRSGeneric",
