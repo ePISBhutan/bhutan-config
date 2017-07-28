@@ -273,14 +273,21 @@
     }
 },
   "usgMonthlyReport": {
-    "name": "USG Monthly Report",
+    "name": "USG Monthly No Of Patients Report",
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/usgMonthlyReport.sql"
     }
   },
+  "usgMonthlyTotalCasesReport": {
+    "name": "USG Monthly Cases Report",
+    "type": "MRSGeneric",
+    "config": {
+      "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/usgTotalMonthlyCases.sql"
+    }
+  },
   "radiologyMonthlyReport": {
-    "name": "Radiology Monthly Report",
+    "name": "X-ray Monthly No Of Patients Report",
     "type": "MRSGeneric",
     "config": {
       "sqlPath": "/var/www/bahmni_config/openmrs/apps/reports/SQL/radiologyMonthlyReport.sql"
