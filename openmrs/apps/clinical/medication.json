@@ -8,9 +8,25 @@
         "hideOrderSet" : true,
         "defaultInstructions": "As directed",
         "hiddenFields": [
-        "quantity",
-        "dosingInstructions",
-          "durationUnits","quantityUnits","startDate","dosingTypeToggle","route","sos","additionalInstructions"
+          "quantity",
+          "dosingInstructions",
+          "durationUnits",
+          "quantityUnits",
+          "startDate",
+          "dosingTypeToggle",
+          "route",
+          "sos",
+          "additionalInstructions"
+        ],
+        "frequencies":[
+          "OD",
+          "BD",
+          "TDS",
+          "QUID",
+          "Q4H",
+          "Q6H",
+          "Q8H",
+          "STAT"
         ],
         "frequencyDefaultDurationUnitsMap": [
           {
