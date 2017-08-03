@@ -549,6 +549,9 @@
           },
           "Surgery Form":{
             "allowAddMore":true
+          },
+          "NCD lab report form":{
+             "hideAbnormalButton" : true
           }
         },
         "visitPage": {
