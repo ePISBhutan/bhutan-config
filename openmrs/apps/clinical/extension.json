@@ -134,7 +134,7 @@
     "requiredPrivilege": "app:clinical"
   },
   "bahmniClinicalPatientsSearchNcdPatients": {
-    "id": "bahmni.clinical.patients.search.pharmacyPatients",
+    "id": "bahmni.clinical.patients.search.ncdPatients",
     "extensionPointId": "org.bahmni.patient.search",
     "type": "config",
     "extensionParams": {
@@ -146,21 +146,6 @@
     "order": 7,
     "requiredPrivilege": "app:clinical"
   },
-    "bahmniClinicalBillingTreatment": {
-        "id": "bahmni.clinical.billing.treatment",
-        "extensionPointId": "org.bahmni.clinical.consultation.board",
-        "type": "link",
-        "label": "Medications",
-        "translationKey":"MEDICATIONS_BOARD_LABEL_KEY",
-        "extensionParams":{
-            "tabConfigName": "allMedicationTabConfig"
-        },
-        "url": "treatment",
-        "icon": "fa-user-md",
-        "order": 7,
-        "requiredPrivilege": "app:clinical:treatmentTab"
-    },
-
     "bahmniClinicalPatientsSearchEmergencyPatients": {
     "id": "bahmni.clinical.patients.search.EmergencyPatients",
     "extensionPointId": "org.bahmni.patient.search",
